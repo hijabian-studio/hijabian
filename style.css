@@ -1447,3 +1447,310 @@ select:focus-visible {
   }
 
 }
+
+/* =========================================================
+   HIJABIAN BRAND UPDATE
+   Theme: Royal Purple + Confident Blue
+   Learn. Earn. Empower.
+========================================================= */
+
+/* 1. NEW BRAND COLOURS */
+
+:root {
+  --navy: #5426A8;
+  --navy-light: #7046C5;
+  --navy-dark: #2B155A;
+
+  --rose: #5426A8;
+  --rose-dark: #45208F;
+  --rose-light: #F0EAFE;
+
+  --cream: #F5F2FC;
+  --white: #FFFFFF;
+  --off-white: #FBFAFF;
+
+  --text: #302B3D;
+  --text-light: #777186;
+  --border: #E8E1F3;
+
+  --blue: #3478E5;
+  --lavender: #8056D9;
+
+  --success: #16865B;
+
+  --shadow: 0 12px 35px rgba(84, 38, 168, 0.09);
+  --shadow-hover: 0 18px 45px rgba(84, 38, 168, 0.16);
+}
+
+
+/* 2. SIGNATURE GRADIENT */
+
+.primary-btn,
+.nav-cta,
+.floating-cta-button {
+  background: linear-gradient(110deg, #5426A8, #3478E5);
+  color: #FFFFFF;
+  border: none;
+}
+
+.primary-btn:hover,
+.nav-cta:hover,
+.floating-cta-button:hover {
+  background: linear-gradient(110deg, #45208F, #2864C5);
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(84, 38, 168, 0.22);
+}
+
+.secondary-btn {
+  border-color: #5426A8;
+  color: #5426A8;
+}
+
+.secondary-btn:hover {
+  background: linear-gradient(110deg, #5426A8, #3478E5);
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+
+/* 3. HEADER & NAVIGATION */
+
+.site-header {
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom-color: #E8E1F3;
+  box-shadow: 0 3px 18px rgba(84, 38, 168, 0.06);
+}
+
+.nav-link {
+  color: #30234D;
+}
+
+.nav-link:hover {
+  color: #3478E5;
+}
+
+.menu-toggle {
+  border-color: #E1D7F2;
+}
+
+.menu-toggle span {
+  background: #5426A8;
+}
+
+
+/* 4. HERO SECTION */
+
+.hero-section {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(43, 21, 90, 0.91) 0%,
+      rgba(84, 38, 168, 0.72) 48%,
+      rgba(52, 120, 229, 0.16) 100%
+    ),
+    url("images/Banner-Image.webp") center / cover no-repeat;
+}
+
+.hero-eyebrow {
+  color: #D9C8FF;
+}
+
+.hero-section .secondary-btn {
+  border-color: rgba(255, 255, 255, 0.85);
+  color: #FFFFFF;
+}
+
+
+/* 5. SECTION BACKGROUNDS */
+
+.categories-section,
+.category-section,
+.instructor-section,
+.policy-page {
+  background: #F5F2FC;
+}
+
+.pillars-section {
+  background: #FFFFFF;
+}
+
+.pillar-card {
+  background: #F8F5FF;
+  border-bottom-color: #8056D9;
+}
+
+.pillar-icon {
+  background: #EEE7FC;
+  color: #5426A8;
+}
+
+
+/* 6. COURSE CARDS */
+
+.category-card {
+  border-color: #EAE3F5;
+  box-shadow: 0 8px 28px rgba(84, 38, 168, 0.07);
+}
+
+.category-card:hover {
+  box-shadow: 0 18px 40px rgba(84, 38, 168, 0.14);
+}
+
+.category-card a,
+.text-link {
+  color: #5426A8;
+}
+
+.category-card a:hover,
+.text-link:hover {
+  color: #3478E5;
+}
+
+
+/* 7. WHY HIJABIAN */
+
+.why-section {
+  background: linear-gradient(125deg, #2B155A, #5426A8 58%, #3478E5);
+}
+
+.why-icon {
+  color: #D9C8FF;
+}
+
+.why-card {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* 8. AFFILIATE SECTION */
+
+.affiliate-section {
+  background: #F0EAFE;
+}
+
+.affiliate-highlight {
+  border: 1px solid #E5D9FA;
+}
+
+.affiliate-percentage {
+  color: #5426A8;
+}
+
+
+/* 9. FINAL CALL TO ACTION */
+
+.final-cta-section,
+.final-cta {
+  background:
+    linear-gradient(
+      120deg,
+      rgba(43, 21, 90, 0.96),
+      rgba(84, 38, 168, 0.94),
+      rgba(52, 120, 229, 0.90)
+    ),
+    url("images/Banner-Image.webp") center / cover no-repeat;
+}
+
+
+/* 10. PRE-FOOTER & FOOTER */
+
+.site-prefooter {
+  background: #F5F2FC;
+  border-top-color: #E8E1F3;
+}
+
+.prefooter-brand h2 span,
+.prefooter-website {
+  color: #5426A8;
+}
+
+.prefooter-policies a:hover {
+  color: #3478E5;
+}
+
+.social-links a {
+  border-color: #E1D7F2;
+  color: #5426A8;
+}
+
+.social-links a:hover {
+  background: linear-gradient(110deg, #5426A8, #3478E5);
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.site-footer {
+  background: #2B155A;
+}
+
+.footer-tagline,
+.footer-links a:hover,
+.footer-contact a:hover {
+  color: #CBB8FF;
+}
+
+
+/* 11. FLOATING CTA */
+
+.floating-cta {
+  border-color: #E8E1F3;
+  border-left-color: #8056D9;
+}
+
+.floating-cta-label {
+  color: #5426A8;
+}
+
+.floating-cta-close {
+  background: #F0EAFE;
+  color: #5426A8;
+}
+
+.floating-cta-close:hover {
+  background: #E3D7FC;
+}
+
+
+/* 12. CONTACT BUTTONS */
+
+.sticky-call-button {
+  background: linear-gradient(110deg, #5426A8, #3478E5);
+}
+
+.sticky-call-button:hover {
+  background: linear-gradient(110deg, #45208F, #2864C5);
+}
+
+/* Keep WhatsApp's familiar green colour */
+
+
+/* 13. FORMS & ACCESSIBILITY */
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #8056D9;
+  box-shadow: 0 0 0 3px rgba(128, 86, 217, 0.13);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgba(128, 86, 217, 0.6);
+  outline-offset: 3px;
+}
+
+
+/* 14. SMOOTH BRAND TRANSITIONS */
+
+.primary-btn,
+.secondary-btn,
+.nav-cta,
+.nav-link,
+.category-card,
+.pillar-card,
+.social-links a {
+  transition: all 0.3s ease;
+}
