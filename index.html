@@ -1,1 +1,1274 @@
-abc
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hijabian | Learn. Earn. Empower.</title>
+
+    <meta name="description" content="Hijabian empowers women across Pakistan through practical online courses, digital skills, freelancing, teaching and entrepreneurship opportunities.">
+    <meta name="keywords" content="Hijabian, women education Pakistan, online courses, freelancing, digital skills, women empowerment, online earning, work from home">
+    <meta name="author" content="Hijabian">
+    <meta name="theme-color" content="#f9f7f2">
+
+    <link rel="canonical" href="https://hijabian.com/">
+
+    <meta property="og:title" content="Hijabian | Learn. Earn. Empower.">
+    <meta property="og:description" content="Learn practical skills, discover opportunities and build your independent future with Hijabian.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hijabian.com/">
+    <meta property="og:image" content="https://hijabian.com/images/Banner-Image.webp">
+
+    <link rel="icon" type="image/webp" href="images/Hijabian%20logo.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #172b43;
+            --navy-light: #263e59;
+            --rose: #b77c82;
+            --rose-dark: #a56870;
+            --rose-light: #f4e8e8;
+            --cream: #f9f7f2;
+            --white: #ffffff;
+            --beige: #eee8dd;
+            --text: #343b45;
+            --muted: #777e87;
+            --border: #e9e4dc;
+            --shadow: 0 12px 35px rgba(23,43,67,.08);
+            --radius: 18px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--white);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        .container {
+            width: min(1160px, 90%);
+            margin: auto;
+        }
+
+        .section {
+            padding: 90px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 48px;
+        }
+
+        .eyebrow {
+            color: var(--rose-dark);
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            line-height: 1.2;
+            color: var(--navy);
+        }
+
+        .section-heading h2 {
+            font-size: clamp(30px, 4vw, 43px);
+            margin-bottom: 15px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 13px 25px;
+            border-radius: 7px;
+            font-size: 14px;
+            font-weight: 700;
+            transition: .3s ease;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--navy);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--rose-dark);
+            transform: translateY(-3px);
+        }
+
+        .btn-rose {
+            background: var(--rose);
+            color: white;
+        }
+
+        .btn-rose:hover {
+            background: var(--rose-dark);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border-color: var(--navy);
+            color: var(--navy);
+        }
+
+        .btn-outline:hover {
+            background: var(--navy);
+            color: white;
+        }
+
+        /* COMPONENT MOUNT POINTS */
+
+        #site-header,
+        #site-prefooter,
+        #site-footer {
+            width: 100%;
+        }
+
+        /* HERO */
+
+        .hero {
+            position: relative;
+            min-height: 570px;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(90deg,
+                rgba(18,35,54,.88) 0%,
+                rgba(18,35,54,.65) 48%,
+                rgba(18,35,54,.12) 100%),
+                url('images/Banner-Image.webp') center/cover no-repeat;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 670px;
+            padding: 90px 0;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(255,255,255,.14);
+            border: 1px solid rgba(255,255,255,.3);
+            border-radius: 30px;
+            padding: 7px 16px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 23px;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: clamp(42px, 6vw, 68px);
+            margin-bottom: 23px;
+            line-height: 1.12;
+        }
+
+        .hero h1 span {
+            color: #e5b5b7;
+        }
+
+        .hero p {
+            max-width: 540px;
+            color: rgba(255,255,255,.9);
+            font-size: 17px;
+            margin-bottom: 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+        }
+
+        .hero .btn-primary {
+            background: var(--rose);
+        }
+
+        .hero .btn-primary:hover {
+            background: white;
+            color: var(--navy);
+        }
+
+        .hero .btn-outline {
+            border-color: white;
+            color: white;
+        }
+
+        .hero .btn-outline:hover {
+            background: white;
+            color: var(--navy);
+        }
+
+        /* INTRODUCTION */
+
+        .intro {
+            background: var(--cream);
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 65px;
+        }
+
+        .intro-content h2 {
+            font-size: clamp(32px, 4vw, 44px);
+            margin-bottom: 22px;
+        }
+
+        .intro-content p {
+            color: var(--muted);
+            margin-bottom: 17px;
+            font-size: 15px;
+        }
+
+        .intro-image {
+            position: relative;
+        }
+
+        .intro-image img {
+            width: 100%;
+            height: 390px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .intro-note {
+            position: absolute;
+            bottom: -20px;
+            left: -25px;
+            background: var(--white);
+            padding: 20px 24px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            max-width: 220px;
+        }
+
+        .intro-note strong {
+            display: block;
+            color: var(--navy);
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+        }
+
+        .intro-note span {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        /* CATEGORIES */
+
+        .categories {
+            background: white;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .category-card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            background: white;
+            transition: .3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-7px);
+            box-shadow: var(--shadow);
+            border-color: var(--rose);
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            transition: .4s ease;
+        }
+
+        .category-card:hover img {
+            transform: scale(1.04);
+        }
+
+        .category-image {
+            overflow: hidden;
+        }
+
+        .category-info {
+            padding: 21px;
+        }
+
+        .category-info h3 {
+            font-size: 19px;
+            margin-bottom: 9px;
+        }
+
+        .category-info p {
+            color: var(--muted);
+            font-size: 13px;
+            min-height: 65px;
+            margin-bottom: 15px;
+        }
+
+        .text-link {
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--rose-dark);
+        }
+
+        .text-link:hover {
+            color: var(--navy);
+        }
+
+        /* LEARN WORK EARN */
+
+        .pillars {
+            background: var(--cream);
+        }
+
+        .pillar-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .pillar-card {
+            background: white;
+            padding: 37px 30px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            transition: .3s;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow);
+        }
+
+        .pillar-icon {
+            width: 65px;
+            height: 65px;
+            border-radius: 17px;
+            display: grid;
+            place-items: center;
+            font-size: 29px;
+            margin-bottom: 23px;
+        }
+
+        .pillar-card:nth-child(1) .pillar-icon {
+            background: #e8eef5;
+        }
+
+        .pillar-card:nth-child(2) .pillar-icon {
+            background: #f5e9e5;
+        }
+
+        .pillar-card:nth-child(3) .pillar-icon {
+            background: #e8f0e9;
+        }
+
+        .pillar-card h3 {
+            font-size: 25px;
+            margin-bottom: 13px;
+        }
+
+        .pillar-card p {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 19px;
+        }
+
+        /* WHY HIJABIAN */
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .why-item {
+            padding: 20px 10px;
+        }
+
+        .why-icon {
+            color: var(--rose);
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .why-item h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .why-item p {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        /* INSTRUCTOR */
+
+        .instructor {
+            background: var(--navy);
+            color: white;
+        }
+
+        .instructor-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 65px;
+        }
+
+        .instructor img {
+            height: 390px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: var(--radius);
+        }
+
+        .instructor h2 {
+            font-size: clamp(32px, 4vw, 44px);
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .instructor p {
+            color: rgba(255,255,255,.75);
+            font-size: 15px;
+            margin-bottom: 25px;
+        }
+
+        /* AFFILIATE */
+
+        .affiliate {
+            background: var(--rose-light);
+        }
+
+        .affiliate-box {
+            background: white;
+            border-radius: 22px;
+            padding: 55px;
+            box-shadow: var(--shadow);
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .affiliate-box h2 {
+            font-size: 38px;
+            margin-bottom: 18px;
+        }
+
+        .affiliate-box p {
+            color: var(--muted);
+            margin-bottom: 17px;
+            font-size: 14px;
+        }
+
+        .affiliate-list {
+            list-style: none;
+            margin: 22px 0;
+        }
+
+        .affiliate-list li {
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .affiliate-list li::before {
+            content: "✓";
+            color: var(--rose-dark);
+            font-weight: 800;
+            margin-right: 10px;
+        }
+
+        .commission-card {
+            background: var(--navy);
+            color: white;
+            padding: 35px;
+            text-align: center;
+            border-radius: 18px;
+        }
+
+        .commission-card span {
+            font-size: 13px;
+            color: rgba(255,255,255,.7);
+        }
+
+        .commission-card strong {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 65px;
+            color: #e6b8ba;
+            line-height: 1.3;
+        }
+
+        .commission-card p {
+            color: white;
+            margin: 0;
+        }
+
+        /* MISSION */
+
+        .mission {
+            background: var(--cream);
+            text-align: center;
+        }
+
+        .mission-content {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .mission h2 {
+            font-size: clamp(32px, 4vw, 45px);
+            margin-bottom: 20px;
+        }
+
+        .mission p {
+            color: var(--muted);
+            font-size: 16px;
+        }
+
+        /* FINAL CTA */
+
+        .final-cta {
+            background:
+                linear-gradient(rgba(23,43,67,.91), rgba(23,43,67,.91)),
+                url('images/Banner-Image.webp') center/cover no-repeat;
+            text-align: center;
+            padding: 85px 20px;
+            color: white;
+        }
+
+        .final-cta h2 {
+            color: white;
+            font-size: clamp(32px, 4vw, 46px);
+            margin-bottom: 18px;
+        }
+
+        .final-cta p {
+            color: rgba(255,255,255,.8);
+            max-width: 620px;
+            margin: 0 auto 28px;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width: 950px) {
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .intro-grid,
+            .instructor-grid {
+                gap: 40px;
+            }
+
+            .affiliate-box {
+                padding: 35px;
+            }
+        }
+
+        @media(max-width: 650px) {
+            .section {
+                padding: 65px 0;
+            }
+
+            .hero {
+                min-height: 550px;
+                background-position: 60% center;
+            }
+
+            .hero-content {
+                padding: 65px 0;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .intro-grid,
+            .instructor-grid,
+            .affiliate-box {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-image img,
+            .instructor img {
+                height: 300px;
+            }
+
+            .intro-note {
+                left: 10px;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 13px;
+            }
+
+            .category-card img {
+                height: 140px;
+            }
+
+            .category-info {
+                padding: 14px;
+            }
+
+            .category-info h3 {
+                font-size: 16px;
+            }
+
+            .category-info p {
+                font-size: 12px;
+                min-height: 80px;
+            }
+
+            .pillar-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .why-item {
+                padding: 12px 5px;
+            }
+
+            .affiliate-box {
+                padding: 25px 20px;
+            }
+
+            .affiliate-box h2 {
+                font-size: 30px;
+            }
+
+            .commission-card strong {
+                font-size: 55px;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+            }
+        }
+
+        @media(max-width: 360px) {
+            .category-grid,
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ACCESSIBILITY */
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--rose);
+            outline-offset: 4px;
+        }
+
+        @media(prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+                animation-duration: .01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER COMPONENT PLACEHOLDER -->
+    <div id="site-header"></div>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+
+                <span class="hero-tag">LEARN. EARN. EMPOWER.</span>
+
+                <h1>
+                    Your Skills.<br>
+                    Your Future.<br>
+                    <span>Your Independence.</span>
+                </h1>
+
+                <p>
+                    Discover practical skills, explore new opportunities
+                    and build a future of confidence and financial
+                    independence with Hijabian.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="courses.html" class="btn btn-primary">
+                        Explore Courses →
+                    </a>
+
+                    <a href="earn-with-us.html" class="btn btn-outline">
+                        Earn with Hijabian
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- INTRODUCTION -->
+    <section class="section intro" id="about">
+        <div class="container intro-grid">
+
+            <div class="intro-content">
+
+                <span class="eyebrow">Welcome to Hijabian</span>
+
+                <h2>
+                    A World of Learning.
+                    A Future of Opportunities.
+                </h2>
+
+                <p>
+                    Hijabian is a women's education, skills development
+                    and career opportunity network designed to help
+                    women learn, grow and become financially independent.
+                </p>
+
+                <p>
+                    Whether you are a student, homemaker, aspiring
+                    freelancer, professional or entrepreneur, Hijabian
+                    helps you discover practical skills and opportunities
+                    to shape your future.
+                </p>
+
+                <p>
+                    Our mission is to make quality learning and digital
+                    opportunities more accessible to women across
+                    Pakistan, including underserved communities.
+                </p>
+
+                <a href="about.html" class="btn btn-primary">
+                    Discover Our Mission →
+                </a>
+
+            </div>
+
+            <div class="intro-image">
+                <img
+                    src="images/Online-coaching.webp"
+                    alt="Women learning and developing professional skills online"
+                    loading="lazy">
+
+                <div class="intro-note">
+                    <strong>Learn & Grow</strong>
+                    <span>Building skills for a brighter future.</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- COURSE CATEGORIES -->
+    <section class="section categories" id="courses">
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="eyebrow">Discover Your Potential</span>
+
+                <h2>Explore Your Learning Journey</h2>
+
+                <p>
+                    Discover practical and career-oriented learning
+                    opportunities across a wide range of professional,
+                    digital and entrepreneurial skills.
+                </p>
+            </div>
+
+            <div class="category-grid">
+
+                <article class="category-card">
+                    <div class="category-image">
+                        <img src="images/digital-marketing.webp"
+                             alt="Digital marketing skills"
+                             loading="lazy">
+                    </div>
+                    <div class="category-info">
+                        <h3>Digital Marketing</h3>
+                        <p>Learn social media, marketing strategies and online promotion.</p>
+                        <a href="courses.html#digital-marketing" class="text-link">Explore Courses →</a>
+                    </div>
+                </article>
+
+                <article class="category-card">
+                    <div class="category-image">
+                        <img src="images/online-graphic-designing.webp"
+                             alt="Graphic design and creative skills"
+                             loading="lazy">
+                    </div>
+                    <div class="category-info">
+                        <h3>Graphic Design</h3>
+                        <p>Develop creative skills for digital design and visual communication.</p>
+                        <a href="courses.html#graphic-design" class="text-link">Explore Courses →</a>
+                    </div>
+                </article>
+
+                <article class="category-card">
+                    <div class="category-image">
+                        <img src="images/Content-writing.webp"
+                             alt="Content writing skills"
+                             loading="lazy">
+                    </div>
+                    <div class="category-info">
+                        <h3>Content Writing</h3>
+                        <p>Learn professional writing, communication and content creation.</p>
+                        <a href="courses.html#content-writing" class="text-link">Explore Courses →</a>
+                    </div>
+                </article>
+
+                <article class="category-card">
+                    <div class="category-image">
+                        <img src="images/Cyber-security.webp"
+                             alt="Cybersecurity and technology"
+                             loading="lazy">
+                    </div>
+                    <div class="category-info">
+                        <h3>Technology & AI</h3>
+                        <p>Explore artificial intelligence, cybersecurity and digital technology.</p>
+                        <a href="courses.html#technology" class="text-link">Explore Courses →</a>
+                    </div>
+                </article>
+
+                <article class="category-card">
+                    <div class="category-image">
+                        <img src="images/E-commerce.webp"
+                             alt="E-commerce and online business"
+                             loading="lazy">
+                    </div>
+                    <div class="category-info">
+                        <h3>E-Commerce</h3>
+                        <p>Discover online selling, digital marketplaces and business skills.</p>
+                        <a href="courses.html#ecommerce" class="text-link">Explore Courses →</a>
+                    </div>
+                </article>
+
+                <article class="category-card">
+                    <div class="category-image">
+                        <img src="images/Online-teaching.webp"
+                             alt="Online teaching and education"
+                             loading="lazy">
+                    </div>
+                    <div class="category-info">
+                        <h3>Online Teaching</h3>
+                        <p>Develop teaching skills and explore online education opportunities.</p>
+                        <a href="courses.html#teaching" class="text-link">Explore Courses →</a>
+                    </div>
+                </article>
+
+                <article class="category-card">
+                    <div class="category-image">
+                        <img src="images/Beauty-services.webp"
+                             alt="Beauty and personal care skills"
+                             loading="lazy">
+                    </div>
+                    <div class="category-info">
+                        <h3>Beauty & Vocational Skills</h3>
+                        <p>Explore practical skills for home-based services and businesses.</p>
+                        <a href="courses.html#vocational" class="text-link">Explore Courses →</a>
+                    </div>
+                </article>
+
+                <article class="category-card">
+                    <div class="category-image">
+                        <img src="images/fashion-online.webp"
+                             alt="Fashion and boutique business"
+                             loading="lazy">
+                    </div>
+                    <div class="category-info">
+                        <h3>Fashion & Boutique</h3>
+                        <p>Learn fashion entrepreneurship and home-based business skills.</p>
+                        <a href="courses.html#fashion" class="text-link">Explore Courses →</a>
+                    </div>
+                </article>
+
+                <article class="category-card">
+                    <div class="category-image">
+                        <img src="images/online-store.webp"
+                             alt="Online store and entrepreneurship"
+                             loading="lazy">
+                    </div>
+                    <div class="category-info">
+                        <h3>Online Business</h3>
+                        <p>Build business knowledge and explore digital entrepreneurship.</p>
+                        <a href="courses.html#business" class="text-link">Explore Courses →</a>
+                    </div>
+                </article>
+
+                <article class="category-card">
+                    <div class="category-image">
+                        <img src="images/Online-doctor.webp"
+                             alt="Online healthcare and professional services"
+                             loading="lazy">
+                    </div>
+                    <div class="category-info">
+                        <h3>Professional Services</h3>
+                        <p>Discover online service opportunities and professional skills.</p>
+                        <a href="courses.html#professional" class="text-link">Explore Courses →</a>
+                    </div>
+                </article>
+
+            </div>
+
+            <div style="text-align:center; margin-top:40px;">
+                <a href="courses.html" class="btn btn-primary">
+                    View All Courses →
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- LEARN WORK EARN -->
+    <section class="section pillars" id="opportunities">
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="eyebrow">Your Journey with Hijabian</span>
+                <h2>Three Ways to Grow</h2>
+                <p>
+                    Learn valuable skills, explore meaningful work
+                    opportunities and develop ways to earn.
+                </p>
+            </div>
+
+            <div class="pillar-grid">
+
+                <article class="pillar-card">
+                    <div class="pillar-icon">📚</div>
+                    <h3>Learn</h3>
+                    <p>
+                        Access practical courses designed to develop
+                        valuable digital, professional and entrepreneurial
+                        skills.
+                    </p>
+                    <a href="courses.html" class="text-link">
+                        Start Learning →
+                    </a>
+                </article>
+
+                <article class="pillar-card">
+                    <div class="pillar-icon">💼</div>
+                    <h3>Work</h3>
+                    <p>
+                        Explore teaching, freelancing, entrepreneurship
+                        and approved company tasks that allow you to
+                        contribute your abilities.
+                    </p>
+                    <a href="earn-with-us.html" class="text-link">
+                        Discover Opportunities →
+                    </a>
+                </article>
+
+                <article class="pillar-card">
+                    <div class="pillar-icon">🌱</div>
+                    <h3>Earn</h3>
+                    <p>
+                        Earn through eligible course referrals, teaching
+                        arrangements and verified company contributions.
+                    </p>
+                    <a href="affiliate-program.html" class="text-link">
+                        Explore Earning Options →
+                    </a>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- WHY HIJABIAN -->
+    <section class="section" id="why-hijabian">
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="eyebrow">The Hijabian Difference</span>
+                <h2>Why Choose Hijabian?</h2>
+                <p>
+                    We believe every woman deserves access to
+                    education, skills and opportunities to build
+                    a better future.
+                </p>
+            </div>
+
+            <div class="why-grid">
+
+                <article class="why-item">
+                    <div class="why-icon">✦</div>
+                    <h3>Accessible Learning</h3>
+                    <p>Explore online learning opportunities from wherever you are.</p>
+                </article>
+
+                <article class="why-item">
+                    <div class="why-icon">✧</div>
+                    <h3>Practical Skills</h3>
+                    <p>Focus on useful knowledge and real-world capabilities.</p>
+                </article>
+
+                <article class="why-item">
+                    <div class="why-icon">♡</div>
+                    <h3>Women-Focused Community</h3>
+                    <p>Be part of a network built around women's growth and opportunity.</p>
+                </article>
+
+                <article class="why-item">
+                    <div class="why-icon">⌂</div>
+                    <h3>Flexible Opportunities</h3>
+                    <p>Discover ways to learn and work from home.</p>
+                </article>
+
+                <article class="why-item">
+                    <div class="why-icon">◎</div>
+                    <h3>Entrepreneurship</h3>
+                    <p>Develop the skills and confidence to start your own business.</p>
+                </article>
+
+                <article class="why-item">
+                    <div class="why-icon">✿</div>
+                    <h3>Economic Empowerment</h3>
+                    <p>Build capabilities that can support greater financial independence.</p>
+                </article>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- INSTRUCTOR SECTION -->
+    <section class="section instructor" id="instructors">
+        <div class="container instructor-grid">
+
+            <div>
+                <span class="eyebrow" style="color:#e6b8ba;">
+                    Teach with Hijabian
+                </span>
+
+                <h2>Share Your Knowledge. Inspire Others.</h2>
+
+                <p>
+                    Do you have professional knowledge, practical
+                    experience or a skill worth sharing?
+                </p>
+
+                <p>
+                    Hijabian welcomes applications from qualified
+                    women interested in teaching and helping others
+                    develop valuable skills.
+                </p>
+
+                <a href="become-instructor.html" class="btn btn-rose">
+                    Become an Instructor →
+                </a>
+            </div>
+
+            <div>
+                <img src="images/Online-teaching.webp"
+                     alt="Woman teaching through an online learning platform"
+                     loading="lazy">
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- AFFILIATE SECTION -->
+    <section class="section affiliate" id="affiliate">
+        <div class="container">
+
+            <div class="affiliate-box">
+
+                <div>
+                    <span class="eyebrow">Grow with Hijabian</span>
+
+                    <h2>Turn Your Contribution into Opportunity.</h2>
+
+                    <p>
+                        Join the Hijabian Affiliate Programme and
+                        participate in promoting education and
+                        supporting our growing learning community.
+                    </p>
+
+                    <ul class="affiliate-list">
+                        <li>Free affiliate registration.</li>
+                        <li>20% direct commission on eligible, verified course sales.</li>
+                        <li>No commission for recruiting affiliates.</li>
+                        <li>Opportunity to complete approved company tasks.</li>
+                        <li>Eligibility for the monthly performance income pool based on verified points.</li>
+                    </ul>
+
+                    <a href="affiliate-program.html" class="btn btn-primary">
+                        Explore Affiliate Programme →
+                    </a>
+                </div>
+
+                <div class="commission-card">
+                    <span>Direct Course Referral Commission</span>
+                    <strong>20%</strong>
+                    <p>
+                        On eligible and verified course sales,
+                        subject to programme terms.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- MISSION -->
+    <section class="section mission" id="mission">
+        <div class="container mission-content">
+
+            <span class="eyebrow">Our Vision for Pakistan</span>
+
+            <h2>
+                Building Opportunities for Women Across Pakistan
+            </h2>
+
+            <p>
+                We believe talent exists everywhere, but opportunity
+                does not always reach everyone. Hijabian aims to
+                bridge that gap by bringing education, digital
+                inclusion, practical skills and earning opportunities
+                closer to women in both urban and rural communities.
+                Our goal is a future where women can learn with
+                confidence, work with dignity and build greater
+                independence.
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+        <div class="container">
+
+            <span class="eyebrow" style="color:#e6b8ba;">
+                Your Future Begins Today
+            </span>
+
+            <h2>Your Journey Starts Here.</h2>
+
+            <p>
+                Learn new skills, discover opportunities and take
+                the next step towards a confident and independent future.
+            </p>
+
+            <a href="courses.html" class="btn btn-rose">
+                Explore Courses →
+            </a>
+
+            <a href="contact.html" class="btn btn-outline"
+               style="border-color:white;color:white;margin-left:8px;">
+                Contact Us
+            </a>
+
+        </div>
+    </section>
+
+
+    <!-- PREFOOTER COMPONENT PLACEHOLDER -->
+    <div id="site-prefooter"></div>
+
+
+    <!-- FOOTER COMPONENT PLACEHOLDER -->
+    <div id="site-footer"></div>
+
+
+    <!-- BASIC JAVASCRIPT -->
+    <script>
+        // Smooth scrolling for internal section links
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function(event) {
+                const target = document.querySelector(this.getAttribute('href'));
+
+                if (target) {
+                    event.preventDefault();
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
