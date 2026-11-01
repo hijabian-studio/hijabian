@@ -3,17 +3,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const headerContainer = document.getElementById("site-header");
 
   if (!headerContainer) {
-    console.error("Hijabian header: #site-header was not found.");
+    console.error("Hijabian: #site-header not found in index.html");
     return;
   }
 
   headerContainer.innerHTML = `
     <header class="site-header">
       <div class="header-container">
-        <a href="index.html" class="site-logo">
+
+        <a href="index.html" class="site-logo" aria-label="Hijabian Home">
           <img
             src="images/Hijabian logo.webp"
-            alt="Hijabian"
+            alt="Hijabian Logo"
             class="logo-image"
           >
         </a>
@@ -31,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <span></span>
         </button>
 
-        <nav class="main-navigation" id="mainNavigation">
+        <nav class="main-navigation" id="mainNavigation" aria-label="Main navigation">
           <a href="index.html" class="nav-link">Home</a>
           <a href="courses.html" class="nav-link">Explore Courses</a>
           <a href="earn-with-us.html" class="nav-link">Work With Us</a>
@@ -41,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <a href="contact.html" class="nav-link">Contact</a>
           <a href="courses.html" class="nav-cta">Start Learning</a>
         </nav>
+
       </div>
     </header>
   `;
@@ -50,8 +52,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   menuToggle.addEventListener("click", function () {
     const isOpen = navigation.classList.toggle("active");
+
     menuToggle.classList.toggle("active", isOpen);
     menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute(
+      "aria-label",
+      isOpen ? "Close navigation menu" : "Open navigation menu"
+    );
   });
 
   navigation.querySelectorAll("a").forEach(function (link) {
@@ -59,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
       navigation.classList.remove("active");
       menuToggle.classList.remove("active");
       menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Open navigation menu");
     });
   });
 
@@ -67,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
       navigation.classList.remove("active");
       menuToggle.classList.remove("active");
       menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Open navigation menu");
     }
   });
 });
