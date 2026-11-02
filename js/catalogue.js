@@ -89,7 +89,7 @@
       cart.push({
         lineId: lineId,
         id: item.id,
-        type: item.typeitem.type,
+        type: item.type,
         title: title,
         price: price,
         currency: item.currency || "PKR",
@@ -251,7 +251,7 @@
         listsHtml += '<h4 class="modal-section-title">Shipping</h4><p style="color:var(--text-light);font-size:0.92rem;">' + item.shippingInfo + '</p>';
       }
       if (item.variants && item.variants.length > 0) {
-        variantHtml = '<div class="variant-selector"><label for="variant-select">Select option</label><select id="variant-select">' +
+        variantHtml = '<div class="variant-selector"><label for="variant="variant-select">Select option</label><select id="variant-select">' +
           item.variants.map(function (v) {
             return '<option value="' + v.id + '">' + v.name + (v.stock != null ? ' (' + v.stock + ' left)' : '') + '</option>';
           }).join('') + '</select></div>';
