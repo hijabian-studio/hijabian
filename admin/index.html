@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hijabian Admin</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/webp" href="../images/Hijabian%20logo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <div class="admin-shell">
+
+    <aside class="admin-sidebar" id="admin-sidebar">
+      <div class="admin-brand">
+        <h1>Hijabian</h1>
+        <span>Admin Panel</span>
+      </div>
+      <nav class="admin-nav">
+        <button type="button" data-section="dashboard" class="active">Dashboard</button>
+        <button type="button" data-section="courses">Courses</button>
+        <button type="button" data-section="products">Products</button>
+        <button type="button" data-section="categories">Categories</button>
+        <button type="button" data-section="media">Media</button>
+        <button type="button" data-section="settings">Settings</button>
+      </nav>
+      <div style="padding:24px 22px;margin-top:auto;">
+        <a href="../index.html" class="btn btn-outline" style="width:100%;color:#fff;border-color:rgba(255,255,255,0.25);">← View website</a>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+
+      <div class="admin-topbar">
+        <h2 id="page-title">Dashboard</h2>
+      </div>
+
+      <div id="admin-notice" class="preview-banner" style="display:none;"></div>
+
+      <div class="preview-banner">
+        <strong>Preview mode.</strong>
+        This admin interface does not write to the live website yet.
+        Changes stay in your browser until the secure Cloudflare Worker backend is connected.
+        No GitHub tokens are stored in this page.
+      </div>
+
+      <!-- DASHBOARD -->
+      <section class="section active" id="section-dashboard">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="label">Published courses</div>
+            <div class="value" id="stat-pub-courses">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="label">Draft / unpublished courses</div>
+            <div class="value" id="stat-draft-courses">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="label">Published products</div>
+            <div class="value" id="stat-pub-products">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="label">Draft / unpublished products</div>
+            <div class="value" id="stat-draft-products">0</div>
+          </div>
+        </div>
+
+        <div class="quick-actions">
+          <button type="button" class="btn btn-primary" data-section-jump="courses" id="qa-add-course">Add course</button>
+          <button type="button" class="btn btn-navy" data-section-jump="products" id="qa-add-product">Add product</button>
+          <button type="button" class="btn btn-outline" data-section-jump="settings">Edit settings</button>
+        </div>
+
+        <div class="panel-card">
+          <div class="panel-card-header">
+            <h3>Getting started</h3>
+          </div>
+          <div style="padding:20px;font-size:0.95rem;color:var(--text-light);">
+            <p style="margin-bottom:10px;">1. Review courses and products loaded from the public JSON files.</p>
+            <p style="margin-bottom:10px;">2. Use Add / Edit forms to prepare catalogue changes in this browser.</p>
+            <p style="margin-bottom:10px;">3. When the Cloudflare Worker backend is ready, the same forms will save securely to GitHub.</p>
+            <p>4. Protect <code>/admin</code> with Cloudflare Access before going live.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- COURSES -->
+      <section class="section" id="section-courses">
+        <div class="panel-card">
+          <div class="panel-card-header">
+            <h3>Courses</h3>
+            <button type="button" class="btn btn-primary" id="btn-add-course">+ Add course</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Title</th>
+                  <th>Price</th>
+                  <th>Schedule</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="courses-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRODUCTS -->
+      <section class="section" id="section-products">
+        <div class="panel-card">
+          <div class="panel-card-header">
+            <h3>Products</h3>
+            <button type="button" class="btn btn-primary" id="btn-add-product">+ Add product</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Title / SKU</th>
+                  <th>Price</th>
+                  <th>Stock</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="products-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- CATEGORIES -->
+      <section class="section" id="section-categories">
+        <div class="panel-card">
+          <div class="panel-card-header">
+            <h3>Categories</h3>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Slug</th>
+                  <th>Types</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="categories-tbody"></tbody>
+            </table>
+          </div>
+          <div style="padding:16px 20px;font-size:0.85rem;color:var(--text-light);">
+            Category create/edit will be enabled with the backend. Existing categories load from <code>data/categories.json</code>.
+          </div>
+        </div>
+      </section>
+
+      <!-- MEDIA -->
+      <section class="section" id="section-media">
+        <div class="panel-card">
+          <div class="panel-card-header">
+            <h3>Media</h3>
+          </div>
+          <div style="padding:20px;">
+            <p style="margin-bottom:14px;color:var(--text-light);font-size:0.95rem;">
+              Choose an image to preview. Files are <strong>not uploaded</strong> to the repository from this page.
+              Real uploads will go through the secure Worker using a server-side GitHub token.
+            </p>
+            <div class="form-group" style="max-width:420px;">
+              <label for="media-file">Select image</label>
+              <input type="file" id="media-file" accept="image/*">
+              <img id="media-preview" class="image-preview" alt="Preview">
+            </div>
+            <p class="hint" style="margin-top:12px;font-size:0.8rem;color:var(--text-light);">
+              For now, place images in the <code>images/</code> folder via GitHub and paste the relative path in course/product forms
+              (e.g. <code>images/digital-marketing.webp</code>).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SETTINGS -->
+      <section class="section" id="section-settings">
+        <div class="panel-card">
+          <div class="panel-card-header">
+            <h3>Business settings</h3>
+          </div>
+          <form id="settings-form">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="set-business">Business name</label>
+                <input type="text" id="set-business" required>
+              </div>
+              <div class="form-group">
+                <label for="set-tagline">Tagline</label>
+                <input type="text" id="set-tagline">
+              </div>
+              <div class="form-group">
+                <label for="set-whatsapp">WhatsApp number (digits only, with country code)</label>
+                <input type="text" id="set-whatsapp" placeholder="923224217059">
+              </div>
+              <div class="form-group">
+                <label for="set-phone-display">Phone display</label>
+                <input type="text" id="set-phone-display" placeholder="+92 322 4217059">
+              </div>
+              <div class="form-group">
+                <label for="set-currency">Currency code</label>
+                <input type="text" id="set-currency" value="PKR">
+              </div>
+              <div class="form-group">
+                <label for="set-currency-symbol">Currency symbol</label>
+                <input type="text" id="set-currency-symbol" value="Rs">
+              </div>
+              <div class="form-group">
+                <label for="set-facebook">Facebook URL</label>
+                <input type="url" id="set-facebook">
+              </div>
+              <div class="form-group">
+                <label for="set-instagram">Instagram URL</label>
+                <input type="url" id="set-instagram">
+              </div>
+              <div class="form-group">
+                <label for="set-tiktok">TikTok URL</label>
+                <input type="url" id="set-tiktok">
+              </div>
+              <div class="form-group">
+                <label for="set-youtube">YouTube URL</label>
+                <input type="url" id="set-youtube">
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Save settings (preview)</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <button type="button" class="mobile-toggle" id="mobile-toggle" aria-label="Menu">☰</button>
+
+  <!-- COURSE MODAL -->
+  <div class="modal-overlay" id="course-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="course-modal-title">Add Course</h3>
+        <button type="button" class="modal-close" data-close-modal="course-modal" aria-label="Close">&times;</button>
+      </div>
+      <form id="course-form">
+        <input type="hidden" id="course-id">
+        <div class="form-grid">
+          <div class="form-group full">
+            <label for="course-title">Title *</label>
+            <input type="text" id="course-title" required>
+          </div>
+          <div class="form-group">
+            <label for="course-slug">Slug</label>
+            <input type="text" id="course-slug">
+          </div>
+          <div class="form-group">
+            <label for="course-category">Category</label>
+            <select id="course-category"></select>
+          </div>
+          <div class="form-group full">
+            <label for="course-short">Short description</label>
+            <input type="text" id="course-short">
+          </div>
+          <div class="form-group full">
+            <label for="course-desc">Full description</label>
+            <textarea id="course-desc"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="course-price">Price (PKR)</label>
+            <input type="number" id="course-price" min="0" step="1">
+          </div>
+          <div class="form-group">
+            <label for="course-status">Publication status</label>
+            <select id="course-status">
+              <option value="draft">Draft</option>
+              <option value="published">Published</option>
+              <option value="unpublished">Unpublished</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="course-duration">Duration</label>
+            <input type="text" id="course-duration" placeholder="e.g. 4 weeks">
+          </div>
+          <div class="form-group">
+            <label for="course-schedule">Live class schedule</label>
+            <input type="text" id="course-schedule" placeholder="e.g. Tue & Thu 7:00 PM">
+          </div>
+          <div class="form-group">
+            <label for="course-start">Start date</label>
+            <input type="date" id="course-start">
+          </div>
+          <div class="form-group">
+            <label for="course-platform">Teaching platform</label>
+            <select id="course-platform">
+              <option>Zoom</option>
+              <option>Google Meet</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="course-instructor">Instructor</label>
+            <input type="text" id="course-instructor">
+          </div>
+          <div class="form-group">
+            <label for="course-seats">Available seats</label>
+            <input type="number" id="course-seats" min="0">
+          </div>
+          <div class="form-group">
+            <label for="course-reg-status">Registration status</label>
+            <select id="course-reg-status">
+              <option value="open">Open</option>
+              <option value="closed">Closed</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label for="course-image">Image path</label>
+            <input type="text" id="course-image" placeholder="images/digital-marketing.webp">
+            <div class="hint">Relative path from site root, or choose a local file to preview.</div>
+            <input type="file" id="course-image-file" accept="image/*" style="margin-top:8px;">
+            <img id="course-image-preview" class="image-preview" alt="Preview">
+          </div>
+          <div class="form-group full">
+            <label>Learning outcomes</label>
+            <div class="list-editor" id="course-outcomes"></div>
+            <button type="button" class="btn btn-outline btn-sm" id="btn-add-outcome" style="margin-top:8px;">+ Add outcome</button>
+          </div>
+          <div class="form-group full">
+            <label>Requirements</label>
+            <div class="list-editor" id="course-requirements"></div>
+            <button type="button" class="btn btn-outline btn-sm" id="btn-add-requirement" style="margin-top:8px;">+ Add requirement</button>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Save course (preview)</button>
+          <button type="button" class="btn btn-outline" data-close-modal="course-modal">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- PRODUCT MODAL -->
+  <div class="modal-overlay" id="product-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="product-modal-title">Add Product</h3>
+        <button type="button" class="modal-close" data-close-modal="product-modal" aria-label="Close">&times;</button>
+      </div>
+      <form id="product-form">
+        <input type="hidden" id="product-id">
+        <div class="form-grid">
+          <div class="form-group full">
+            <label for="product-title">Title *</label>
+            <input type="text" id="product-title" required>
+          </div>
+          <div class="form-group">
+            <label for="product-slug">Slug</label>
+            <input type="text" id="product-slug">
+          </div>
+          <div class="form-group">
+            <label for="product-category">Category</label>
+            <select id="product-category"></select>
+          </div>
+          <div class="form-group full">
+            <label for="product-short">Short description</label>
+            <input type="text" id="product-short">
+          </div>
+          <div class="form-group full">
+            <label for="product-desc">Full description</label>
+            <textarea id="product-desc"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="product-price">Price (PKR)</label>
+            <input type="number" id="product-price" min="0" step="1">
+          </div>
+          <div class="form-group">
+            <label for="product-status">Publication status</label>
+            <select id="product-status">
+              <option value="draft">Draft</option>
+              <option value="published">Published</option>
+              <option value="unpublished">Unpublished</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="product-sku">SKU</label>
+            <input type="text" id="product-sku">
+          </div>
+          <div class="form-group">
+            <label for="product-stock">Stock quantity</label>
+            <input type="number" id="product-stock" min="0">
+          </div>
+          <div class="form-group">
+            <label for="product-colour">Colour</label>
+            <input type="text" id="product-colour">
+          </div>
+          <div class="form-group">
+            <label for="product-size">Size</label>
+            <input type="text" id="product-size">
+          </div>
+          <div class="form-group full">
+            <label for="product-shipping">Shipping information</label>
+            <textarea id="product-shipping"></textarea>
+          </div>
+          <div class="form-group full">
+            <label for="product-image">Image path</label>
+            <input type="text" id="product-image" placeholder="images/online-store.webp">
+            <input type="file" id="product-image-file" accept="image/*" style="margin-top:8px;">
+            <img id="product-image-preview" class="image-preview" alt="Preview">
+          </div>
+          <div class="form-group full">
+            <label>Variants (colour / size / stock)</label>
+            <div class="variants-list" id="variants-list"></div>
+            <button type="button" class="btn btn-outline btn-sm" id="btn-add-variant" style="margin-top:8px;">+ Add variant</button>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Save product (preview)</button>
+          <button type="button" class="btn btn-outline" data-close-modal="product-modal">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+  <script>
+    // Quick action buttons on dashboard
+    document.getElementById("qa-add-course")?.addEventListener("click", function () {
+      document.querySelector('[data-section="courses"]')?.click();
+      setTimeout(function () { document.getElementById("btn-add-course")?.click(); }, 50);
+    });
+    document.getElementById("qa-add-product")?.addEventListener("click", function () {
+      document.querySelector('[data-section="products"]')?.click();
+      setTimeout(function () { document.getElementById("btn-add-product")?.click(); }, 50);
+    });
+    document.querySelector('[data-section-jump="settings"]')?.addEventListener("click", function () {
+      document.querySelector('[data-section="settings"]')?.click();
+    });
+    document.getElementById("media-file")?.addEventListener("change", function (e) {
+      const file = e.target.files && e.target.files[0];
+      const img = document.getElementById("media-preview");
+      if (!file || !img) return;
+      const reader = new FileReader();
+      reader.onload = function () {
+        img.src = reader.result;
+        img.classList.add("visible");
+      };
+      reader.readAsDataURL(file);
+    });
+  </script>
+</body>
+</html>
