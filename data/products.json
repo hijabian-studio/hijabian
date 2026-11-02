@@ -1,0 +1,132 @@
+{
+  "products": [
+    {
+      "id": "prod-notebook-001",
+      "type": "physical",
+      "title": "Hijabian Learning Notebook – A5",
+      "slug": "hijabian-learning-notebook-a5",
+      "category": "physical-products",
+      "shortDescription": "Premium A5 notebook designed for course notes and goal setting.",
+      "description": "A high-quality A5 notebook with guided pages for course notes, weekly goals and reflection. Ideal companion for Hijabian live classes. Soft-touch cover with Hijabian branding.\n\nDEMO DATA – for testing only.",
+      "price": 650,
+      "currency": "PKR",
+      "image": "images/online-store.webp",
+      "status": "published",
+      "sku": "HIJ-NB-A5-001",
+      "stock": 120,
+      "variants": [
+        {
+          "id": "var-nb-rose",
+          "name": "Dusty Rose",
+          "colour": "Dusty Rose",
+          "size": "A5",
+          "stock": 45,
+          "sku": "HIJ-NB-A5-001-RS"
+        },
+        {
+          "id": "var-nb-navy",
+          "name": "Deep Navy",
+          "colour": "Deep Navy",
+          "size": "A5",
+          "stock": 75,
+          "sku": "HIJ-NB-A5-001-NV"
+        }
+      ],
+      "colour": "Multiple",
+      "size": "A5",
+      "shippingInfo": "Ships within 3–5 working days across Pakistan. Cash on delivery available in selected cities.",
+      "createdAt": "2026-11-01T12:00:00+05:00",
+      "updatedAt": "2026-11-02T12:00:00+05:00"
+    },
+    {
+      "id": "prod-planner-002",
+      "type": "physical",
+      "title": "Women’s Goal & Skills Planner",
+      "slug": "womens-goal-skills-planner",
+      "category": "physical-products",
+      "shortDescription": "12-month planner focused on skills, learning and personal growth.",
+      "description": "A thoughtfully designed planner that helps women track learning goals, course progress, income targets and personal milestones. Includes monthly and weekly layouts plus habit trackers.\n\nDEMO DATA – for testing only.",
+      "price": 1200,
+      "currency": "PKR",
+      "image": "images/online-store.webp",
+      "status": "published",
+      "sku": "HIJ-PL-12M-001",
+      "stock": 80,
+      "variants": [
+        {
+          "id": "var-pl-standard",
+          "name": "Standard Edition",
+          "colour": "Ivory",
+          "size": "A5",
+          "stock": 80,
+          "sku": "HIJ-PL-12M-001-ST"
+        }
+      ],
+      "colour": "Ivory",
+      "size": "A5",
+      "shippingInfo": "Ships within 3–5 working days. Packaging is gift-ready.",
+      "createdAt": "2026-11-01T12:10:00+05:00",
+      "updatedAt": "2026-11-02T12:00:00+05:00"
+    },
+    {
+      "id": "prod-tote-003",
+      "type": "physical",
+      "title": "Hijabian Canvas Tote Bag",
+      "slug": "hijabian-canvas-tote-bag",
+      "category": "physical-products",
+      "shortDescription": "Durable canvas tote with Hijabian branding – practical and stylish.",
+      "description": "A sturdy, reusable canvas tote bag featuring the Hijabian logo. Perfect for carrying course materials, books or everyday essentials. Supports the brand’s mission of empowerment.\n\nDEMO DATA – for testing only.",
+      "price": 950,
+      "currency": "PKR",
+      "image": "images/online-store.webp",
+      "status": "published",
+      "sku": "HIJ-TB-CV-001",
+      "stock": 60,
+      "variants": [
+        {
+          "id": "var-tb-natural",
+          "name": "Natural Canvas",
+          "colour": "Natural",
+          "size": "One Size",
+          "stock": 40,
+          "sku": "HIJ-TB-CV-001-NT"
+        },
+        {
+          "id": "var-tb-navy",
+          "name": "Navy",
+          "colour": "Navy",
+          "size": "One Size",
+          "stock": 20,
+          "sku": "HIJ-TB-CV-001-NV"
+        }
+      ],
+      "colour": "Multiple",
+      "size": "One Size",
+      "shippingInfo": "Ships within 4–7 working days. Lightweight and easy to pack.",
+      "createdAt": "2026-11-01T12:20:00+05:00",
+      "updatedAt": "2026-11-02T12:00:00+05:00"
+    },
+    {
+      "id": "prod-kit-004",
+      "type": "physical",
+      "title": "Starter Freelancer Kit (Digital + Physical)",
+      "slug": "starter-freelancer-kit",
+      "category": "physical-products",
+      "shortDescription": "Physical notebook + printed guides to support new freelancers.",
+      "description": "A carefully curated starter kit for women beginning their freelancing journey. Includes a branded notebook, printed client communication templates, and a simple rate card template.\n\nDEMO DATA – for testing only.",
+      "price": 1850,
+      "currency": "PKR",
+      "image": "images/online-store.webp",
+      "status": "published",
+      "sku": "HIJ-KIT-FL-001",
+      "stock": 35,
+      "variants": [],
+      "colour": "Mixed",
+      "size": "Standard",
+      "shippingInfo": "Ships within 5–7 working days. Includes both physical items and access instructions for any digital extras.",
+      "createdAt": "2026-11-01T12:30:00+05:00",
+      "updatedAt": "2026-11-02T12:00:00+05:00"
+    }
+  ],
+  "updatedAt": "2026-11-02T12:00:00+05:00"
+}
