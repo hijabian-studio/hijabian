@@ -1,0 +1,19 @@
+name = "hijabian-admin-api"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+
+# Public worker URL will be something like:
+# https://hijabian-admin-api.<your-subdomain>.workers.dev
+
+[vars]
+# Non-secret configuration (safe to commit)
+GITHUB_OWNER = "hijabian-studio"
+GITHUB_REPO = "hijabian"
+GITHUB_BRANCH = "main"
+# Comma-separated list of emails allowed to use the admin API
+# Example: "you@example.com,partner@example.com"
+ALLOWED_EMAILS = ""
+
+# Secrets (set with wrangler secret put — NEVER commit these):
+#   GITHUB_TOKEN          Fine-grained PAT with Contents: Read and write on this repo only
+#   ADMIN_SHARED_SECRET   Optional extra shared secret the admin UI sends as a header
