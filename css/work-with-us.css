@@ -1,0 +1,491 @@
+/* =========================================================
+   HIJABIAN - WORK WITH US PAGE (scoped styles)
+========================================================= */
+
+.work-with-us-page .work-hero {
+  background: var(--cream);
+  padding: 80px 0 70px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.work-with-us-page .work-hero h1 {
+  margin-bottom: 12px;
+}
+
+.work-with-us-page .work-hero-sub {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 2.5vw, 1.7rem);
+  color: var(--rose-dark);
+  margin-bottom: 22px;
+  font-weight: 600;
+}
+
+.work-with-us-page .work-hero-lead {
+  max-width: 720px;
+  margin: 0 auto 16px;
+  color: var(--text-light);
+  font-size: 1.05rem;
+}
+
+.work-with-us-page .work-hero .primary-btn {
+  margin-top: 18px;
+}
+
+/* Opportunity cards */
+.work-with-us-page .opportunity-grid {
+  width: min(92%, var(--container));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+.work-with-us-page .opportunity-card {
+  background: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(23, 43, 67, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.work-with-us-page .opportunity-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.work-with-us-page .opportunity-card-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.work-with-us-page .opportunity-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.work-with-us-page .opportunity-card:hover .opportunity-card-image img {
+  transform: scale(1.04);
+}
+
+.work-with-us-page .opportunity-card-body {
+  padding: 26px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.work-with-us-page .opportunity-card-body h3 {
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+}
+
+.work-with-us-page .opportunity-card-body p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.work-with-us-page .opportunity-card-body .opp-label {
+  font-weight: 600;
+  color: var(--navy);
+  margin-top: 8px;
+  margin-bottom: 6px;
+}
+
+.work-with-us-page .opportunity-card-body ul {
+  margin: 0 0 14px 18px;
+  list-style: disc;
+  color: var(--text-light);
+  font-size: 0.92rem;
+}
+
+.work-with-us-page .opportunity-card-body ul li {
+  margin-bottom: 4px;
+}
+
+.work-with-us-page .opportunity-card-body .opp-closing {
+  font-size: 0.9rem;
+  color: var(--text);
+  margin-bottom: 18px;
+  flex: 1;
+}
+
+.work-with-us-page .opportunity-card-body .primary-btn {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* Who can apply */
+.work-with-us-page .work-who {
+  background: var(--cream);
+}
+
+.work-with-us-page .who-grid {
+  width: min(92%, var(--container));
+  margin: 0 auto 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.work-with-us-page .who-item {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 18px 20px;
+  font-weight: 600;
+  color: var(--navy);
+  border: 1px solid var(--border);
+  text-align: center;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.work-with-us-page .who-item:hover {
+  border-color: var(--rose);
+  box-shadow: var(--shadow);
+}
+
+.work-with-us-page .who-closing {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+  color: var(--text-light);
+}
+
+/* Process */
+.work-with-us-page .process-grid {
+  width: min(92%, var(--container));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.work-with-us-page .process-step {
+  text-align: center;
+  padding: 28px 18px;
+  background: var(--cream);
+  border-radius: 10px;
+  border-bottom: 4px solid var(--rose);
+}
+
+.work-with-us-page .process-number {
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  background: var(--rose);
+  color: var(--white);
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin-bottom: 14px;
+}
+
+.work-with-us-page .process-step h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.work-with-us-page .process-step p {
+  color: var(--text-light);
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+/* Form */
+.work-with-us-page .work-form-section {
+  background: var(--white);
+}
+
+.work-with-us-page .form-disclaimer {
+  font-size: 0.92rem;
+  color: var(--rose-dark);
+  font-weight: 600;
+  max-width: 640px;
+  margin: 12px auto 0;
+}
+
+.work-with-us-page .application-form {
+  width: min(92%, 780px);
+  margin: 40px auto 0;
+  background: var(--cream);
+  border-radius: 12px;
+  padding: 36px 32px 40px;
+  border: 1px solid var(--border);
+}
+
+.work-with-us-page .form-section {
+  border: none;
+  margin: 0 0 28px;
+  padding: 0;
+}
+
+.work-with-us-page .form-section legend {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--navy);
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.work-with-us-page .application-field {
+  margin-bottom: 16px;
+}
+
+.work-with-us-page .application-field label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+
+.work-with-us-page .application-field .required {
+  color: var(--rose-dark);
+}
+
+.work-with-us-page .application-field .optional {
+  font-weight: 400;
+  color: var(--text-light);
+  font-size: 0.85rem;
+}
+
+.work-with-us-page .application-field input,
+.work-with-us-page .application-field select,
+.work-with-us-page .application-field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  background: var(--white);
+  color: var(--text);
+  transition: var(--transition);
+}
+
+.work-with-us-page .application-field input:focus,
+.work-with-us-page .application-field select:focus,
+.work-with-us-page .application-field textarea:focus {
+  outline: none;
+  border-color: var(--rose);
+  box-shadow: 0 0 0 3px rgba(183, 124, 130, 0.18);
+}
+
+.work-with-us-page .application-field textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.work-with-us-page .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.work-with-us-page .checkbox-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 16px;
+}
+
+.work-with-us-page .check-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.93rem;
+  color: var(--text);
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+.work-with-us-page .check-label input {
+  margin-top: 3px;
+  flex-shrink: 0;
+  width: 17px;
+  height: 17px;
+  accent-color: var(--rose);
+}
+
+.work-with-us-page .consent-label {
+  background: var(--white);
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.work-with-us-page .consent-label a {
+  color: var(--rose-dark);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.work-with-us-page .field-hint {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  margin: 0 0 12px;
+}
+
+.work-with-us-page .field-error {
+  color: #b42318;
+  font-size: 0.88rem;
+  margin-top: 6px;
+}
+
+.work-with-us-page .hp-field {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.work-with-us-page .form-actions {
+  margin-top: 10px;
+}
+
+.work-with-us-page .form-actions .primary-btn {
+  min-width: 200px;
+}
+
+.work-with-us-page .form-status {
+  margin: 18px 0;
+  padding: 14px 18px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.work-with-us-page .form-status.success {
+  background: #e8f6ef;
+  color: var(--success);
+  border: 1px solid #b8e0c8;
+}
+
+.work-with-us-page .form-status.error {
+  background: #fdecea;
+  color: #b42318;
+  border: 1px solid #f5c2c0;
+}
+
+.work-with-us-page .form-status.loading {
+  background: var(--rose-light);
+  color: var(--navy);
+  border: 1px solid var(--border);
+}
+
+.work-with-us-page .conditional-block[hidden] {
+  display: none !important;
+}
+
+/* FAQ */
+.work-with-us-page .work-faq {
+  background: var(--cream);
+}
+
+.work-with-us-page .faq-list {
+  width: min(92%, 760px);
+  margin: 0 auto;
+}
+
+.work-with-us-page .faq-item {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.work-with-us-page .faq-item summary {
+  padding: 16px 20px;
+  font-weight: 600;
+  color: var(--navy);
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  padding-right: 44px;
+}
+
+.work-with-us-page .faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.work-with-us-page .faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+  color: var(--rose-dark);
+  font-weight: 400;
+}
+
+.work-with-us-page .faq-item[open] summary::after {
+  content: "−";
+}
+
+.work-with-us-page .faq-answer {
+  padding: 0 20px 18px;
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+/* Final CTA */
+.work-with-us-page .work-final-cta {
+  padding: 80px 20px;
+  background:
+    linear-gradient(rgba(23, 43, 67, 0.92), rgba(23, 43, 67, 0.92)),
+    url("../images/Banner-Image.webp") center / cover no-repeat;
+  text-align: center;
+  color: var(--white);
+}
+
+.work-with-us-page .work-final-cta h2 {
+  color: var(--white);
+  margin-bottom: 14px;
+}
+
+.work-with-us-page .work-final-cta p {
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 600px;
+  margin: 0 auto 12px;
+}
+
+.work-with-us-page .work-final-cta .primary-btn {
+  margin-top: 18px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .work-with-us-page .process-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .work-with-us-page .form-row,
+  .work-with-us-page .checkbox-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .work-with-us-page .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .work-with-us-page .application-form {
+    padding: 26px 18px 32px;
+  }
+
+  .work-with-us-page .opportunity-grid {
+    grid-template-columns: 1fr;
+  }
+}
