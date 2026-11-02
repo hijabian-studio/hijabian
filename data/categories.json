@@ -1,0 +1,105 @@
+{
+  "categories": [
+    {
+      "id": "cat-digital-marketing",
+      "name": "Digital Marketing & Social Media",
+      "slug": "digital-marketing",
+      "description": "Social media marketing, online promotion and digital growth skills.",
+      "image": "images/digital-marketing.webp",
+      "type": ["course", "product"],
+      "order": 1,
+      "status": "published"
+    },
+    {
+      "id": "cat-graphic-design",
+      "name": "Graphic Design & Creative Skills",
+      "slug": "graphic-design",
+      "description": "Visual design, branding and creative digital skills.",
+      "image": "images/online-graphic-designing.webp",
+      "type": ["course", "product"],
+      "order": 2,
+      "status": "published"
+    },
+    {
+      "id": "cat-content-writing",
+      "name": "Content Writing & Communication",
+      "slug": "content-writing",
+      "description": "Professional writing, storytelling and communication skills.",
+      "image": "images/Content-writing.webp",
+      "type": ["course"],
+      "order": 3,
+      "status": "published"
+    },
+    {
+      "id": "cat-ecommerce",
+      "name": "E-Commerce & Online Business",
+      "slug": "ecommerce",
+      "description": "Online selling, marketplaces and digital entrepreneurship.",
+      "image": "images/E-commerce.webp",
+      "type": ["course", "product"],
+      "order": 4,
+      "status": "published"
+    },
+    {
+      "id": "cat-technology",
+      "name": "Technology, AI & Cybersecurity",
+      "slug": "technology",
+      "description": "Artificial intelligence, cybersecurity and digital technology skills.",
+      "image": "images/Cyber-security.webp",
+      "type": ["course"],
+      "order": 5,
+      "status": "published"
+    },
+    {
+      "id": "cat-teaching",
+      "name": "Online Teaching & Education",
+      "slug": "online-teaching",
+      "description": "Teaching methods and online education opportunities.",
+      "image": "images/Online-teaching.webp",
+      "type": ["course"],
+      "order": 6,
+      "status": "published"
+    },
+    {
+      "id": "cat-vocational",
+      "name": "Home-Based & Vocational Skills",
+      "slug": "vocational",
+      "description": "Practical skills for home-based services and businesses.",
+      "image": "images/Beauty-services.webp",
+      "type": ["course", "product"],
+      "order": 7,
+      "status": "published"
+    },
+    {
+      "id": "cat-fashion",
+      "name": "Fashion & Boutique",
+      "slug": "fashion",
+      "description": "Fashion entrepreneurship and boutique business skills.",
+      "image": "images/fashion-online.webp",
+      "type": ["course", "product"],
+      "order": 8,
+      "status": "published"
+    },
+    {
+      "id": "cat-professional",
+      "name": "Professional & Office Skills",
+      "slug": "professional",
+      "description": "Office skills, freelancing and professional services.",
+      "image": "images/Online-doctor.webp",
+      "type": ["course"],
+      "order": 9,
+      "status": "published"
+    },
+    {
+      "id": "cat-physical-products",
+      "name": "Physical Products",
+      "slug": "physical-products",
+      "description": "Physical goods and learning materials sold by Hijabian.",
+      "image": "images/online-store.webp",
+      "type": ["product"],
+      "order": 10,
+      "status": "published"
+    }
+  ],
+  "updatedAt": "2026-11-02T12:00:00+05:00"
+}
