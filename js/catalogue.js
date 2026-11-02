@@ -30,8 +30,19 @@
     }
   }
 
+  function updateHeaderBadge() {
+    const badge = document.getElementById("cart-badge");
+    if (!badge) return;
+    const count = getCart().reduce(function (sum, item) {
+      return sum + (item.quantity || 0);
+    }, 0);
+    badge.textContent = count > 0 ? String(count) : "";
+    badge.setAttribute("data-count", String(count));
+  }
+
   function saveCart(cart) {
     localStorage.setItem(CART_KEY, JSON.stringify(cart));
+    updateHeaderBadge();
   }
 
   function showToast(message) {
@@ -229,7 +240,7 @@
         const item = allItems.find((i) => i.id === btn.dataset.id);
         if (!item) return;
         if (item.type === "physical" && item.variants && item.variants.length > 0) {
-          openModal(item.id); // force variant selection
+          openModal(item.id);
         } else {
           addToCart(item);
         }
@@ -364,6 +375,7 @@
 
       renderFilters();
       renderGrid();
+      updateHeaderBadge();
 
       const searchInput = document.getElementById("catalogue-search");
       if (searchInput) {
