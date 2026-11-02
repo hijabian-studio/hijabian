@@ -10,6 +10,7 @@
 
       <div class="prefooter-container">
 
+        <!-- Brand Message -->
         <div class="prefooter-brand">
 
           <h2>Be Part of the <span>Hijabian</span> Community</h2>
@@ -25,6 +26,8 @@
 
         </div>
 
+
+        <!-- Policies -->
         <div class="prefooter-policies">
 
           <h3>Important Information</h3>
@@ -43,6 +46,8 @@
 
         </div>
 
+
+        <!-- Social Media -->
         <div class="prefooter-social">
 
           <h3>Follow Hijabian</h3>
@@ -54,10 +59,41 @@
 
           <div class="social-links">
 
-            <a href="https://www.facebook.com/hijabianstudio" target="_blank" rel="noopener noreferrer" aria-label="Follow Hijabian on Facebook">Facebook</a>
-            <a href="https://www.instagram.com/hijabianstudio/" target="_blank" rel="noopener noreferrer" aria-label="Follow Hijabian on Instagram">Instagram</a>
-            <a href="https://www.tiktok.com/@hijabianstudio" target="_blank" rel="noopener noreferrer" aria-label="Follow Hijabian on TikTok">TikTok</a>
-            <a href="https://www.youtube.com/@hijabianstudio" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to Hijabian on YouTube">YouTube</a>
+            <a
+              href="https://www.facebook.com/hijabianstudio"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow Hijabian on Facebook"
+            >
+              Facebook
+            </a>
+
+            <a
+              href="https://www.instagram.com/hijabianstudio/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow Hijabian on Instagram"
+            >
+              Instagram
+            </a>
+
+            <a
+              href="https://www.tiktok.com/@hijabianstudio"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow Hijabian on TikTok"
+            >
+              TikTok
+            </a>
+
+            <a
+              href="https://www.youtube.com/@hijabianstudio"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Subscribe to Hijabian on YouTube"
+            >
+              YouTube
+            </a>
 
           </div>
 
@@ -69,6 +105,8 @@
 
   `;
 
+
+  // Insert pre-footer into its placeholder
   const prefooterContainer = document.getElementById("site-prefooter");
 
   if (prefooterContainer) {
