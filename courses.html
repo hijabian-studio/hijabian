@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Explore Courses | Hijabian – Learn. Earn. Empower.</title>
+
+  <meta name="description" content="Browse live online courses for women. Practical skills in digital marketing, design, writing, e-commerce, teaching and more. Classes conducted via Zoom and Google Meet.">
+  <meta name="keywords" content="Hijabian courses, live online classes, women education Pakistan, digital skills, freelancing courses">
+  <link rel="canonical" href="https://hijabian.com/courses.html">
+
+  <meta property="og:title" content="Explore Courses | Hijabian">
+  <meta property="og:description" content="Live online courses designed for women across Pakistan. Learn practical skills and grow with confidence.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hijabian.com/courses.html">
+  <meta property="og:image" content="https://hijabian.com/images/Banner-Image.webp">
+
+  <link rel="icon" type="image/webp" href="images/Hijabian%20logo.webp">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/catalogue.css">
+</head>
+
+<body data-catalogue="courses">
+
+  <div id="site-header"></div>
+
+  <section class="catalogue-hero">
+    <div class="container">
+      <span class="section-eyebrow">Live Online Learning</span>
+      <h1>Explore Your Learning Journey</h1>
+      <p>
+        Practical, career-oriented courses conducted live online via Zoom or Google Meet.
+        These are not recorded video courses — you learn in real time with guidance and interaction.
+      </p>
+      <div class="live-notice">Live classes · Interactive · Women-focused</div>
+    </div>
+  </section>
+
+  <div class="catalogue-controls">
+    <div class="search-box">
+      <input type="search" id="catalogue-search" placeholder="Search courses..." aria-label="Search courses">
+    </div>
+    <div class="category-filters" id="category-filters"></div>
+  </div>
+
+  <div id="loading-state" class="loading-state">Loading courses...</div>
+
+  <div class="catalogue-grid" id="catalogue-grid"></div>
+
+  <div id="empty-state" class="empty-state" style="display:none;">
+    <h3>No courses found</h3>
+    <p>Try a different search or category filter.</p>
+  </div>
+
+  <!-- Details Modal -->
+  <div class="catalogue-modal-overlay" id="catalogue-modal" role="dialog" aria-modal="true" aria-label="Course details">
+    <div class="catalogue-modal" id="modal-content"></div>
+  </div>
+
+  <div id="site-prefooter"></div>
+  <div id="site-footer"></div>
+
+  <script src="header.js" defer></script>
+  <script src="prefooter.js" defer></script>
+  <script src="footer.js" defer></script>
+  <script src="js/catalogue.js" defer></script>
+
+</body>
+</html>
