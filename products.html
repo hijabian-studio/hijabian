@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Shop Products | Hijabian – Learn. Earn. Empower.</title>
+
+  <meta name="description" content="Browse Hijabian physical products including learning notebooks, planners, tote bags and freelancing starter kits. Support your learning journey.">
+  <meta name="keywords" content="Hijabian products, learning materials, notebooks, planners, women empowerment store">
+  <link rel="canonical" href="https://hijabian.com/products.html">
+
+  <meta property="og:title" content="Shop Products | Hijabian">
+  <meta property="og:description" content="Quality learning tools and products designed to support women on their skills and career journey.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hijabian.com/products.html">
+  <meta property="og:image" content="https://hijabian.com/images/online-store.webp">
+
+  <link rel="icon" type="image/webp" href="images/Hijabian%20logo.webp">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/catalogue.css">
+</head>
+
+<body data-catalogue="products">
+
+  <div id="site-header"></div>
+
+  <section class="catalogue-hero">
+    <div class="container">
+      <span class="section-eyebrow">Hijabian Store</span>
+      <h1>Learning Tools & Products</h1>
+      <p>
+        Practical products designed to support your courses, goals and everyday growth.
+        Quality materials that complement your learning journey with Hijabian.
+      </p>
+    </div>
+  </section>
+
+  <div class="catalogue-controls">
+    <div class="search-box">
+      <input type="search" id="catalogue-search" placeholder="Search products..." aria-label="Search products">
+    </div>
+    <div class="category-filters" id="category-filters"></div>
+  </div>
+
+  <div id="loading-state" class="loading-state">Loading products...</div>
+
+  <div class="catalogue-grid" id="catalogue-grid"></div>
+
+  <div id="empty-state" class="empty-state" style="display:none;">
+    <h3>No products found</h3>
+    <p>Try a different search or category filter.</p>
+  </div>
+
+  <!-- Details Modal -->
+  <div class="catalogue-modal-overlay" id="catalogue-modal" role="dialog" aria-modal="true" aria-label="Product details">
+    <div class="catalogue-modal" id="modal-content"></div>
+  </div>
+
+  <div id="site-prefooter"></div>
+  <div id="site-footer"></div>
+
+  <script src="header.js" defer></script>
+  <script src="prefooter.js" defer></script>
+  <script src="footer.js" defer></script>
+  <script src="js/catalogue.js" defer></script>
+
+</body>
+</html>
