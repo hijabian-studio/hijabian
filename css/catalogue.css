@@ -215,6 +215,32 @@
   margin-bottom: 16px;
 }
 
+.card-price.dual,
+.modal-price.dual {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.price-current {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.price-original {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  text-decoration: line-through;
+  font-weight: 500;
+}
+
+.modal-price .price-current {
+  font-size: 1.5rem;
+}
+
 .card-actions {
   display: flex;
   gap: 10px;
