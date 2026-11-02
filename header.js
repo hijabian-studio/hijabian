@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <nav class="main-navigation" id="mainNavigation" aria-label="Main navigation">
           <a href="index.html" class="nav-link">Home</a>
           <a href="courses.html" class="nav-link">Explore Courses</a>
+          <a href="products.html" class="nav-link">Shop</a>
           <a href="earn-with-us.html" class="nav-link">Work With Us</a>
           <a href="affiliate-program.html" class="nav-link">Affiliate Programme</a>
           <a href="become-instructor.html" class="nav-link">Become an Instructor</a>
