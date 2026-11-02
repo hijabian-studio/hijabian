@@ -1,0 +1,15 @@
+{
+  "name": "hijabian-admin-api",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Secure Cloudflare Worker for Hijabian admin catalogue operations",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail"
+  },
+  "devDependencies": {
+    "wrangler": "^3.90.0"
+  }
+}
