@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Your Cart | Hijabian</title>
+
+  <meta name="description" content="Review your Hijabian cart and send an order request via WhatsApp. Live courses and physical products.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://hijabian.com/cart.html">
+
+  <link rel="icon" type="image/webp" href="images/Hijabian%20logo.webp">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/catalogue.css">
+  <link rel="stylesheet" href="css/cart.css">
+</head>
+
+<body>
+
+  <div id="site-header"></div>
+
+  <section class="cart-hero">
+    <div class="container">
+      <span class="section-eyebrow">Your Selection</span>
+      <h1>Shopping Cart</h1>
+      <p>Review your items below. When you are ready, send an order request on WhatsApp.</p>
+    </div>
+  </section>
+
+  <!-- Empty state -->
+  <div id="cart-empty" class="cart-empty" style="display:none;">
+    <h2>Your cart is empty</h2>
+    <p>Browse our live courses and products to get started.</p>
+    <a href="courses.html" class="primary-btn">Explore Courses</a>
+    <a href="products.html" class="secondary-btn" style="margin-left:10px;">Shop Products</a>
+  </div>
+
+  <!-- Cart layout -->
+  <div id="cart-layout" class="cart-layout" style="display:none;">
+    <div class="cart-items" id="cart-items"></div>
+    <aside class="cart-summary" id="cart-summary"></aside>
+  </div>
+
+  <!-- Checkout form (revealed after Proceed) -->
+  <section id="checkout-section" class="checkout-section" style="display:none;">
+    <h2>Complete Your Order Request</h2>
+
+    <div class="checkout-note">
+      <strong>Important:</strong> Sending this message is an <em>order request only</em>.
+      It does not confirm registration, reserve a seat, or prove payment.
+      Hijabian will contact you to confirm availability and next steps.
+    </div>
+
+    <form id="checkout-form" class="checkout-form" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="customer-name">Full name *</label>
+          <input type="text" id="customer-name" name="name" required autocomplete="name" placeholder="Your full name">
+        </div>
+        <div class="form-group">
+          <label for="customer-phone">Phone / WhatsApp *</label>
+          <input type="tel" id="customer-phone" name="phone" required autocomplete="tel" placeholder="03XX XXXXXXX">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="customer-city">City *</label>
+        <input type="text" id="customer-city" name="city" required autocomplete="address-level2" placeholder="e.g. Lahore, Karachi, Islamabad">
+      </div>
+
+      <div class="form-group" id="address-group" style="display:none;">
+        <label for="customer-address">Delivery address *</label>
+        <textarea id="customer-address" name="address" placeholder="Full delivery address for physical products"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="customer-notes">Additional notes (optional)</label>
+        <textarea id="customer-notes" name="notes" placeholder="Preferred batch time, questions, or special requests"></textarea>
+      </div>
+
+      <div class="checkout-actions">
+        <button type="submit" class="primary-btn">Send Order on WhatsApp</button>
+        <button type="button" class="secondary-btn" onclick="document.getElementById('checkout-section').style.display='none'">Back to Cart</button>
+      </div>
+    </form>
+  </section>
+
+  <div id="site-prefooter"></div>
+  <div id="site-footer"></div>
+
+  <script src="header.js" defer></script>
+  <script src="prefooter.js" defer></script>
+  <script src="footer.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/whatsapp-checkout.js" defer></script>
+
+</body>
+</html>
