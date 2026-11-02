@@ -3,9 +3,22 @@ document.addEventListener("DOMContentLoaded", function () {
   const headerContainer = document.getElementById("site-header");
 
   if (!headerContainer) {
-    console.error("Hijabian: #site-header not found in index.html");
+    console.error("Hijabian: #site-header not found");
     return;
   }
+
+  function getCartCount() {
+    try {
+      const cart = JSON.parse(localStorage.getItem("hijabian_cart")) || [];
+      return cart.reduce(function (sum, item) {
+        return sum + (item.quantity || 0);
+      }, 0);
+    } catch (e) {
+      return 0;
+    }
+  }
+
+  const count = getCartCount();
 
   headerContainer.innerHTML = `
     <header class="site-header">
@@ -41,6 +54,10 @@ document.addEventListener("DOMContentLoaded", function () {
           <a href="become-instructor.html" class="nav-link">Become an Instructor</a>
           <a href="about.html" class="nav-link">About Us</a>
           <a href="contact.html" class="nav-link">Contact</a>
+          <a href="cart.html" class="nav-cart" aria-label="Shopping cart">
+            Cart
+            <span class="cart-badge" id="cart-badge" data-count="${count}">${count > 0 ? count : ""}</span>
+          </a>
           <a href="courses.html" class="nav-cta">Start Learning</a>
         </nav>
 
