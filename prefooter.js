@@ -1,6 +1,4 @@
 
-\========================================= \*/\
-\
 (function () {\
 \
 &#x20; const prefooterHTML = \`\
@@ -114,4 +112,4 @@
 &#x20;   console.warn("Hijabian pre-footer placeholder was not found.");\
 &#x20; }\
 \
-})(); 
+}
