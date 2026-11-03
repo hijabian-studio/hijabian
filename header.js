@@ -50,8 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
           <a href="courses.html" class="nav-link">Explore Courses</a>
           <a href="products.html" class="nav-link">Shop</a>
           <a href="earn-with-us.html" class="nav-link">Work With Us</a>
-          <a href="affiliate-program.html" class="nav-link">Affiliate Programme</a>
-          <a href="become-instructor.html" class="nav-link">Become an Instructor</a>
           <a href="about.html" class="nav-link">About Us</a>
           <a href="contact.html" class="nav-link">Contact</a>
           <a href="cart.html" class="nav-cart" aria-label="Shopping cart">
