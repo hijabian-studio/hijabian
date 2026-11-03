@@ -2016,12 +2016,12 @@ select:focus-visible {
 }
 
 .form-group input:focus,
-.form-group textarea:focus {
+.form-group textarea:focus,
+.form-group select:focus {
   outline: none;
-  border-color: var(--rose);
-  box-shadow: 0 0 0 3px rgba(183, 124, 130, 0.15);
+  border-color: #8056D9;
+  box-shadow: 0 0 0 3px rgba(128, 86, 217, 0.13);
 }
-
 .form-group textarea {
   min-height: 90px;
   resize: vertical;
@@ -2187,10 +2187,9 @@ select:focus-visible {
 
 .search-box input:focus {
   outline: none;
-  border-color: var(--rose);
-  box-shadow: 0 0 0 3px rgba(183, 124, 130, 0.15);
+  border-color: #8056D9;
+  box-shadow: 0 0 0 3px rgba(128, 86, 217, 0.13);
 }
-
 .search-box::before {
   content: "⌕";
   position: absolute;
@@ -3040,7 +3039,7 @@ select:focus-visible {
 .work-with-us-page .application-field textarea:focus {
   outline: none;
   border-color: var(--rose, #c18b91);
-  box-shadow: 0 0 0 3px rgba(193, 139, 145, .17);
+box-shadow: 0 0 0 3px rgba(128, 86, 217, .13);
 }
 
 .work-with-us-page .application-field input::placeholder,
@@ -3100,8 +3099,8 @@ select:focus-visible {
 }
 
 .work-with-us-page .checkbox-grid .check-label:has(input:checked) {
-  background: #f7edef;
-  border-color: var(--rose, #c18b91);
+  background: #F0EAFE;
+  border-color: #8056D9;
 }
 
 .work-with-us-page .check-label input {
@@ -3220,11 +3219,10 @@ select:focus-visible {
 }
 
 .work-with-us-page .form-status.loading {
-  background: #f7edef;
-  color: var(--navy, #172b43);
-  border: 1px solid var(--border, #e8e1dc);
+  background: #F0EAFE;
+  color: #5426A8;
+  border: 1px solid #E8E1F3;
 }
-
 /* =========================================================
    FAQ
    ========================================================= */
@@ -3289,7 +3287,12 @@ select:focus-visible {
 .work-with-us-page .work-final-cta {
   padding: 75px 20px;
   background:
-    linear-gradient(rgba(23, 43, 67, .91), rgba(23, 43, 67, .91)),
+    linear-gradient(
+      120deg,
+      rgba(43, 21, 90, .96),
+      rgba(84, 38, 168, .94),
+      rgba(52, 120, 229, .90)
+    ),
     url("images/Banner-Image.webp") center / cover no-repeat;
   text-align: center;
   color: #fff;
