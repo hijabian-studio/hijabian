@@ -24,6 +24,71 @@
 
   
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Products page only — floating cart */
+    .products-float-cart {
+      position: fixed;
+      right: 18px;
+      bottom: 88px;
+      z-index: 900;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #5426A8, #3478E5);
+      color: #fff;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(84, 38, 168, 0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .products-float-cart:hover,
+    .products-float-cart:focus {
+      transform: scale(1.06);
+      box-shadow: 0 8px 24px rgba(84, 38, 168, 0.45);
+      color: #fff;
+      outline: none;
+    }
+    .products-float-cart svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+    .products-float-cart .float-cart-badge {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      min-width: 20px;
+      height: 20px;
+      padding: 0 5px;
+      border-radius: 999px;
+      background: #e11d48;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 20px;
+      text-align: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+      display: none;
+    }
+    .products-float-cart .float-cart-badge.is-visible {
+      display: block;
+    }
+    @media (max-width: 640px) {
+      .products-float-cart {
+        right: 14px;
+        bottom: 80px;
+        width: 48px;
+        height: 48px;
+      }
+      .products-float-cart svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body data-catalogue="products">
@@ -62,6 +127,14 @@
     <div class="catalogue-modal" id="modal-content"></div>
   </div>
 
+  <!-- Floating cart (products page only) -->
+  <a href="cart.html" class="products-float-cart" id="products-float-cart" aria-label="Open shopping cart">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2zM7.16 14h9.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 21.08 5H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h12v-2H7.42l.74-1.35z"/>
+    </svg>
+    <span class="float-cart-badge" id="products-float-cart-badge" aria-hidden="true">0</span>
+  </a>
+
   <div id="site-prefooter"></div>
   <div id="site-footer"></div>
 
@@ -69,6 +142,47 @@
   <script src="prefooter.js" defer></script>
   <script src="footer.js" defer></script>
   <script src="js/catalogue.js" defer></script>
+  <script>
+    (function () {
+      var CART_KEY = "hijabian_cart";
+      var badge = document.getElementById("products-float-cart-badge");
+      var btn = document.getElementById("products-float-cart");
+      if (!badge || !btn) return;
+
+      function getCount() {
+        try {
+          var cart = JSON.parse(localStorage.getItem(CART_KEY) || "[]");
+          if (!Array.isArray(cart)) return 0;
+          return cart.reduce(function (sum, item) {
+            return sum + (Number(item.qty) || Number(item.quantity) || 1);
+          }, 0);
+        } catch (e) {
+          return 0;
+        }
+      }
+
+      function refresh() {
+        var count = getCount();
+        badge.textContent = String(count);
+        if (count > 0) {
+          badge.classList.add("is-visible");
+          badge.setAttribute("aria-hidden", "false");
+          btn.setAttribute("aria-label", "Open shopping cart, " + count + " item" + (count === 1 ? "" : "s"));
+        } else {
+          badge.classList.remove("is-visible");
+          badge.setAttribute("aria-hidden", "true");
+          btn.setAttribute("aria-label", "Open shopping cart");
+        }
+      }
+
+      refresh();
+      window.addEventListener("storage", refresh);
+      document.addEventListener("click", function () {
+        setTimeout(refresh, 80);
+      });
+      setInterval(refresh, 1500);
+    })();
+  </script>
 
 </body>
 </html>
