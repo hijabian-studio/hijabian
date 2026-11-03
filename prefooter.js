@@ -1,3 +1,4 @@
+```javascript
 /* =========================================
    HIJABIAN - PRE-FOOTER SECTION
 ========================================= */
@@ -20,8 +21,8 @@
             Discover your potential, build your future and grow with us.
           </p>
 
-          <a href="earn-with-us.html" class="prefooter-website">
-            Explore Work With Us →
+          <a href="learn-and-earn.html" class="prefooter-website">
+            Explore Learn & Earn →
           </a>
 
         </div>
@@ -42,6 +43,10 @@
 
           <a href="earn-with-us.html">
             Work With Us
+          </a>
+
+          <a href="learn-and-earn.html">
+            Learn & Earn with HIJABIAN
           </a>
 
         </div>
@@ -116,3 +121,4 @@
   }
 
 })();
+```
