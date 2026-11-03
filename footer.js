@@ -39,14 +39,22 @@
           <a href="index.html">Home</a>
           <a href="courses.html">Explore Courses</a>
           <a href="earn-with-us.html">Work With Us</a>
-          <a href="affiliate-program.html">Affiliate Programme</a>
+          <a href="earn-with-us.html">Affiliate Programme</a>
+          <a href="learn-and-earn.html">Learn & Earn</a>
         </div>
 
         <div class="footer-links">
           <h3>About Hijabian</h3>
           <a href="about.html">Our Mission</a>
-          <a href="become-instructor.html">Become an Instructor</a>
+          <a href="earn-with-us.html">Become an Instructor</a>
           <a href="contact.html">Contact Us</a>
+        </div>
+
+        <div class="footer-links">
+          <h3>Legal</h3>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="refund-return-exchange-policy.html">Refund & Return Policy</a>
+          <a href="terms-of-service.html">Terms of Service</a>
         </div>
 
         <div class="footer-contact">
