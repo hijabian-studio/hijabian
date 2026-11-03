@@ -1,123 +1,117 @@
-javascript
-/* =========================================
-   HIJABIAN - PRE-FOOTER SECTION
-========================================= */
 
-(function () {
-
-  const prefooterHTML = `
-
-    <section class="site-prefooter">
-
-      <div class="prefooter-container">
-
-        <!-- Brand Message -->
-        <div class="prefooter-brand">
-
-          <h2>Be Part of the <span>Hijabian</span> Community</h2>
-
-          <p>
-            A world of learning, skills and opportunities for women.
-            Discover your potential, build your future and grow with us.
-          </p>
-
-          <a href="learn-and-earn.html" class="prefooter-website">
-            Explore Learn & Earn →
-          </a>
-
-        </div>
-
-
-        <!-- Policies -->
-        <div class="prefooter-policies">
-
-          <h3>Important Information</h3>
-
-          <a href="privacy-policy.html">
-            Privacy Policy
-          </a>
-
-          <a href="refund-return-exchange-policy.html">
-            Refund, Return & Exchange Policy
-          </a>
-
-          <a href="earn-with-us.html">
-            Work With Us
-          </a>
-
-          <a href="learn-and-earn.html">
-            Learn & Earn with HIJABIAN
-          </a>
-
-        </div>
-
-
-        <!-- Social Media -->
-        <div class="prefooter-social">
-
-          <h3>Follow Hijabian</h3>
-
-          <p>
-            Connect with us and stay updated with our latest
-            courses, opportunities and initiatives.
-          </p>
-
-          <div class="social-links">
-
-            <a
-              href="https://www.facebook.com/hijabianstudio"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Follow Hijabian on Facebook"
-            >
-              Facebook
-            </a>
-
-            <a
-              href="https://www.instagram.com/hijabianstudio/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Follow Hijabian on Instagram"
-            >
-              Instagram
-            </a>
-
-            <a
-              href="https://www.tiktok.com/@hijabianstudio"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Follow Hijabian on TikTok"
-            >
-              TikTok
-            </a>
-
-            <a
-              href="https://www.youtube.com/@hijabianstudio"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Subscribe to Hijabian on YouTube"
-            >
-              YouTube
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  `;
-
-
-  // Insert pre-footer into its placeholder
-  const prefooterContainer = document.getElementById("site-prefooter");
-
-  if (prefooterContainer) {
-    prefooterContainer.innerHTML = prefooterHTML;
-  } else {
-    console.warn("Hijabian pre-footer placeholder was not found.");
-  }
-
-})();
+\========================================= \*/\
+\
+(function () {\
+\
+&#x20; const prefooterHTML = \`\
+\
+&#x20;   \<section class="site-prefooter">\
+\
+&#x20;     \<div class="prefooter-container">\
+\
+&#x20;       \<!-- Brand Message -->\
+&#x20;       \<div class="prefooter-brand">\
+\
+&#x20;         \<h2>Be Part of the \<span>Hijabian\</span> Community\</h2>\
+\
+&#x20;         \<p>\
+&#x20;           A world of learning, skills and opportunities for women.\
+&#x20;           Discover your potential, build your future and grow with us.\
+&#x20;         \</p>\
+\
+&#x20;         \<a href="earn-with-us.html" class="prefooter-website">\
+&#x20;           Explore Work With Us →\
+&#x20;         \</a>\
+\
+&#x20;       \</div>\
+\
+\
+&#x20;       \<!-- Policies -->\
+&#x20;       \<div class="prefooter-policies">\
+\
+&#x20;         \<h3>Important Information\</h3>\
+\
+&#x20;         \<a href="privacy-policy.html">\
+&#x20;           Privacy Policy\
+&#x20;         \</a>\
+\
+&#x20;         \<a href="refund-return-exchange-policy.html">\
+&#x20;           Refund, Return & Exchange Policy\
+&#x20;         \</a>\
+\
+&#x20;         \<a href="earn-with-us.html">\
+&#x20;           Work With Us\
+&#x20;         \</a>\
+\
+&#x20;       \</div>\
+\
+\
+&#x20;       \<!-- Social Media -->\
+&#x20;       \<div class="prefooter-social">\
+\
+&#x20;         \<h3>Follow Hijabian\</h3>\
+\
+&#x20;         \<p>\
+&#x20;           Connect with us and stay updated with our latest\
+&#x20;           courses, opportunities and initiatives.\
+&#x20;         \</p>\
+\
+&#x20;         \<div class="social-links">\
+\
+&#x20;           \<a\
+&#x20;             href="https\://www\.facebook.com/hijabianstudio"\
+&#x20;             target="\_blank"\
+&#x20;             rel="noopener noreferrer"\
+&#x20;             aria-label="Follow Hijabian on Facebook"\
+&#x20;           \>\
+&#x20;             Facebook\
+&#x20;           \</a>\
+\
+&#x20;           \<a\
+&#x20;             href="https\://www\.instagram.com/hijabianstudio/"\
+&#x20;             target="\_blank"\
+&#x20;             rel="noopener noreferrer"\
+&#x20;             aria-label="Follow Hijabian on Instagram"\
+&#x20;           \>\
+&#x20;             Instagram\
+&#x20;           \</a>\
+\
+&#x20;           \<a\
+&#x20;             href="https\://www\.tiktok.com/@hijabianstudio"\
+&#x20;             target="\_blank"\
+&#x20;             rel="noopener noreferrer"\
+&#x20;             aria-label="Follow Hijabian on TikTok"\
+&#x20;           \>\
+&#x20;             TikTok\
+&#x20;           \</a>\
+\
+&#x20;           \<a\
+&#x20;             href="https\://www\.youtube.com/@hijabianstudio"\
+&#x20;             target="\_blank"\
+&#x20;             rel="noopener noreferrer"\
+&#x20;             aria-label="Subscribe to Hijabian on YouTube"\
+&#x20;           \>\
+&#x20;             YouTube\
+&#x20;           \</a>\
+\
+&#x20;         \</div>\
+\
+&#x20;       \</div>\
+\
+&#x20;     \</div>\
+\
+&#x20;   \</section>\
+\
+&#x20; \`;\
+\
+\
+&#x20; // Insert pre-footer into its placeholder\
+&#x20; const prefooterContainer = document.getElementById("site-prefooter");\
+\
+&#x20; if (prefooterContainer) {\
+&#x20;   prefooterContainer.innerHTML = prefooterHTML;\
+&#x20; } else {\
+&#x20;   console.warn("Hijabian pre-footer placeholder was not found.");\
+&#x20; }\
+\
+})(); 
