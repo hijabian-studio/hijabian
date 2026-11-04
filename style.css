@@ -1,2 +1,191 @@
-/* test restore 15kb placeholder - will replace with full file */
-body { font-family: sans-serif; }
+/* HIJABIAN styles — base sheet + footer/sticky updates */
+@import url("https://cdn.jsdelivr.net/gh/hijabian-studio/hijabian@a77554a2d5fe05975013ba20bb9754414d8a33e9/style.css");
+
+/* =========================================================
+   FOOTER SOCIALS + MOBILE FOOTER + STICKY BAR 50/50
+========================================================= */
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
+  gap: 36px 28px;
+  padding-bottom: 45px;
+  width: min(92%, var(--container));
+  margin: 0 auto;
+}
+
+.footer-social-brands {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-social-group {
+  margin: 0;
+}
+
+.footer-social-label {
+  margin: 0 0 2px;
+  color: #fff !important;
+  font-size: 0.88rem !important;
+  font-weight: 700;
+}
+
+.footer-social-note {
+  margin: 0 0 8px;
+  color: rgba(255, 255, 255, 0.55) !important;
+  font-size: 0.75rem !important;
+}
+
+.footer-social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+  transition: background 0.2s ease, transform 0.15s ease, color 0.2s ease;
+}
+
+.footer-social-icons a:hover {
+  background: rgba(203, 184, 255, 0.28);
+  color: #E8DEFF;
+  padding-left: 0 !important;
+  transform: translateY(-2px);
+}
+
+.footer-social-icons .social-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.sticky-contact-bar {
+  position: fixed;
+  z-index: 1200;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 56px;
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+  gap: 0;
+  padding: 0;
+  background: transparent;
+  box-shadow: 0 -6px 24px rgba(23, 43, 67, 0.16);
+  border-top: none;
+}
+
+.sticky-contact-bar a {
+  flex: 1 1 50%;
+  width: 50%;
+  max-width: none;
+  min-height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #fff !important;
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: 0;
+  text-decoration: none;
+  transition: filter 0.2s ease, background 0.2s ease;
+}
+
+.sticky-whatsapp-button {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important;
+}
+
+.sticky-whatsapp-button:hover {
+  filter: brightness(1.06);
+  background: linear-gradient(135deg, #2FE574 0%, #0F9F8A 100%) !important;
+}
+
+.sticky-call-button {
+  background: linear-gradient(135deg, #5426A8 0%, #3478E5 100%) !important;
+}
+
+.sticky-call-button:hover {
+  filter: brightness(1.06);
+  background: linear-gradient(135deg, #6430C4 0%, #4088F0 100%) !important;
+}
+
+.contact-button-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.contact-button-icon svg {
+  display: block;
+}
+
+@media (max-width: 980px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 18px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sticky-contact-bar {
+    min-height: 54px;
+    padding: 0;
+  }
+
+  .sticky-contact-bar a {
+    min-height: 54px;
+    font-size: 0.9rem;
+    gap: 8px;
+    width: 50%;
+    flex: 1 1 50%;
+    max-width: none;
+  }
+
+  .footer-social-icons a {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 360px) {
+  .sticky-contact-bar a {
+    font-size: 0.82rem;
+    gap: 6px;
+  }
+}
