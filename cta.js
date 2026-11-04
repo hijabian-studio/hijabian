@@ -1,4 +1,10 @@
-$$$
+// HIJABIAN CTA MASTER SWITCH
+const CTA_ENABLED = false;
+
+if (CTA_ENABLED) {
+
+    // KEEP ALL YOUR EXISTING CTA.JS CODE HERE
+
 /* =========================================
    HIJABIAN - FLOATING CTA BANNER
 ========================================= */
@@ -68,3 +74,5 @@ $$$
   }
 
 })();
+}
+   
