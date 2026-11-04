@@ -1,5 +1,5 @@
 // HIJABIAN CTA MASTER SWITCH
-const CTA_ENABLED = false;
+const CTA_ENABLED = true;
 
 if (CTA_ENABLED) {
 
