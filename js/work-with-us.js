@@ -1,20 +1,13 @@
 /* =========================================================
    HIJABIAN - WORK WITH US PAGE LOGIC
-   Conditional fields + Formspree-ready submission
+   Conditional fields + WhatsApp submission
 ========================================================= */
 
 (function () {
   "use strict";
 
-  /**
-   * FORM BACKEND CONFIGURATION
-   * ---------------------------
-   * 1. Create a free form at https://formspree.io
-   * 2. Replace YOUR_FORM_ID below with your Formspree form ID
-   * 3. Optionally enable spam filtering and file attachments in Formspree dashboard
-   * 4. Deploy this file — no other secrets required in frontend code
-   */
-  const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+  /** WhatsApp number for receiving applications (Pakistan, no +) */
+  const WHATSAPP_NUMBER = "923224217059";
 
   const form = document.getElementById("work-application-form");
   if (!form) return;
@@ -62,7 +55,7 @@
       const shouldShow = selected.indexOf(key) !== -1;
       block.hidden = !shouldShow;
 
-      // Clear required state and values when hidden to avoid validating unused fields
+      // Clear required state when hidden to avoid validating unused fields
       block.querySelectorAll("input, select, textarea").forEach(function (el) {
         if (!shouldShow) {
           el.removeAttribute("required");
@@ -148,10 +141,91 @@
     return valid;
   }
 
-  /* ---------- Submission ---------- */
+  function val(id) {
+    const el = document.getElementById(id);
+    if (!el) return "";
+    return String(el.value || "").trim();
+  }
+
+  function line(label, value) {
+    if (!value) return "";
+    return "*" + label + ":* " + value + "\n";
+  }
+
+  function buildWhatsAppMessage() {
+    const opps = Array.from(
+      form.querySelectorAll('input[name="opportunity[]"]:checked')
+    ).map(function (cb) {
+      // Prefer visible label text next to checkbox when available
+      const label = cb.closest("label");
+      if (label) {
+        const text = label.textContent.replace(/\s+/g, " ").trim();
+        if (text) return text;
+      }
+      return cb.value;
+    });
+
+    var msg = "*HIJABIAN — Work With Us Application*\n\n";
+    msg += line("Full Name", val("fullName"));
+    msg += line("Email", val("email"));
+    msg += line("WhatsApp", val("whatsapp"));
+    msg += line("Country", val("country"));
+    msg += line("City", val("city"));
+    msg += line("Time Zone", val("timezone"));
+    msg += line("Opportunities", opps.join(", "));
+
+    // Instructor
+    if (val("teachSubjects") || val("teachExperience")) {
+      msg += "\n*— Instructor details —*\n";
+      msg += line("Subjects / skills", val("teachSubjects"));
+      msg += line("Experience", val("teachExperience"));
+      msg += line("Taught online before", val("taughtOnline"));
+      msg += line("Comfortable with live classes", val("liveClasses"));
+      msg += line("Teaching languages", val("teachLanguages"));
+      msg += line("Portfolio", val("teachPortfolio"));
+    }
+
+    // Freelance
+    if (val("services")) {
+      msg += "\n*— Freelance / remote work —*\n";
+      msg += line("Services", val("services"));
+      msg += line("Tools", val("tools"));
+      msg += line("Experience level", val("experienceLevel"));
+      msg += line("Project-based availability", val("projectBased"));
+      msg += line("Portfolio", val("freelancePortfolio"));
+    }
+
+    // Vocational / home-based
+    if (val("productsServices")) {
+      msg += "\n*— Vocational / home-based —*\n";
+      msg += line("Products / services", val("productsServices"));
+      msg += line("Runs home-based business", val("homeBusiness"));
+    }
+
+    // Partnership
+    if (val("collaborationProposal")) {
+      msg += "\n*— Partnership / collaboration —*\n";
+      msg += line("Proposal", val("collaborationProposal"));
+    }
+
+    // Other
+    if (val("otherDescription")) {
+      msg += "\n*— Other interest —*\n";
+      msg += line("Description", val("otherDescription"));
+    }
+
+    // Optional general fields if present
+    msg += line("About / bio", val("about") || val("bio") || val("message"));
+    msg += line("How did you hear about us", val("referralSource") || val("howHeard"));
+
+    msg += "\n_Submitted from hijabian.com/earn-with-us.html_";
+    return msg;
+  }
+
+  /* ---------- Submission via WhatsApp ---------- */
   let submitting = false;
 
-  form.addEventListener("submit", async function (e) {
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
     if (submitting) return;
 
@@ -160,60 +234,30 @@
       return;
     }
 
-    // Guard: endpoint not configured
-    if (!FORMSPREE_ENDPOINT || FORMSPREE_ENDPOINT.indexOf("YOUR_FORM_ID") !== -1) {
-      showStatus(
-        "error",
-        "Form is not yet connected to a submission service. Please contact HIJABIAN directly via WhatsApp or email while configuration is completed."
-      );
-      return;
-    }
-
     submitting = true;
     if (submitBtn) {
       submitBtn.disabled = true;
-      submitBtn.textContent = "Submitting…";
+      submitBtn.textContent = "Opening WhatsApp…";
     }
-    showStatus("loading", "Sending your application…");
 
     try {
-      const formData = new FormData(form);
+      const message = buildWhatsAppMessage();
+      const url =
+        "https://wa.me/" +
+        WHATSAPP_NUMBER +
+        "?text=" +
+        encodeURIComponent(message);
 
-      // Collect selected opportunities as a single readable string
-      const opps = Array.from(
-        form.querySelectorAll('input[name="opportunity[]"]:checked')
-      ).map(function (cb) {
-        return cb.value;
-      });
-      formData.set("opportunities", opps.join(", "));
+      showStatus(
+        "success",
+        "Your application is ready. WhatsApp will open so you can send it to HIJABIAN. Please press Send in WhatsApp to complete your application."
+      );
 
-      const response = await fetch(FORMSPREE_ENDPOINT, {
-        method: "POST",
-        body: formData,
-        headers: {
-          Accept: "application/json"
-        }
-      });
-
-      if (response.ok) {
-        showStatus(
-          "success",
-          "Thank you for your interest in HIJABIAN! Your application has been submitted successfully. Our team will review your information and contact you if a suitable opportunity becomes available."
-        );
-        form.reset();
-        updateConditionalFields();
-      } else {
-        let msg = "Something went wrong while submitting. Please try again or contact us via WhatsApp.";
-        try {
-          const data = await response.json();
-          if (data && data.error) msg = data.error;
-        } catch (err) {}
-        showStatus("error", msg);
-      }
+      window.open(url, "_blank", "noopener,noreferrer");
     } catch (err) {
       showStatus(
         "error",
-        "Unable to reach the submission service. Please check your connection or contact HIJABIAN via WhatsApp."
+        "Unable to open WhatsApp. Please contact HIJABIAN on WhatsApp at +92 322 4217059."
       );
     } finally {
       submitting = false;
