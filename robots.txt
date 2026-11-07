@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Do not index admin area
+Disallow: /admin/
+Disallow: /admin
+
+Sitemap: https://hijabian.com/sitemap.xml
